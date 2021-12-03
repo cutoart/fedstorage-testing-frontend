@@ -136,6 +136,11 @@ export default {
 };
 </script>
 <style scoped>
+
+.navbar-toggler{
+margin-right: 10px;
+}
+
 .navbar-top ul li a {
   font-size: 18px !important;
 }

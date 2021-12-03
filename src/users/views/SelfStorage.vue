@@ -16,13 +16,14 @@
                   </div>
                 </div>
                 <div
-                  class="row form-group"
+                  class="row form-group" style="min-height:260px"
                   v-for="list in listOfMapValue"
                   :key="list.id"
                 >
                   <div class="col list">{{ list.name }}</div>
                   <div class="col-10 row">
-                    <span
+                    <!-- codeupdate -->
+                      <router-link :to="'/selfstorage/' + item._id"
                       class="col-6 span-content"
                       v-for="item in items.filter(
                         (a) => a.state['value'] == list.id
@@ -39,14 +40,14 @@
                             ? item.branch.label.split("/")[0]
                             : item.branch.label.split("/")[1]
                           : item.branch.label.split("/")[0]
-                      }}</span
-                    >
+                      }}</router-link
+                    > <!-- endcodeupdate -->
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-6 map form-group">
-              <div
+            <div class="col-6 map form-group" style="min-height:350px">
+               <div
                 style="border-radius:15px;background-color:white;padding-top: 15px;
     padding-bottom: 15px;"
                 v-if="
@@ -93,7 +94,7 @@
                         "
                       >
                         <div class="image-wrapper">
-                          <img :src="$store.state.apiURL + '/store/' + image" />
+                          <img :src="$store.state.apiURL + '/store/' + image" style="object-fit:cover"/>
                         </div>
                       </div>
                       <a
@@ -196,7 +197,7 @@
               </div>
               <div class="col-12">
                 <div class="row mt-2">
-                  <div class="row col-md-8 col-sm-12 facility">
+                  <div class="col-md-8 col-sm-12 facility">
                     <div
                       v-if="
                         item.facilities != undefined &&
@@ -276,6 +277,7 @@
 </template>
 
 <script>
+     
 import Vue from "vue";
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
@@ -345,6 +347,7 @@ export default {
     });
   },
 };
+
 </script>
 
 <style scoped>
@@ -456,9 +459,12 @@ a.looking-better:before {
   margin-left: 60px;
   margin-top: 30px;
 }
+/* codeupdate */
 .facility {
-  padding-left: 35px;
+  padding-left: 29px;
+  display: inline-flex;
 }
+/* endcodeupdate */
 .font-weight-normal {
   margin-top: 10px;
 }
@@ -656,7 +662,7 @@ a.looking-better:before {
     height: 150px !important;
   }
   .slider-img .image-wrapper img{
-    height: 184px;
+    height: 384px;
   }
 }
 

@@ -2,7 +2,80 @@
   <div>
     <div>
       <section class="our-feature">
-        <div class="container">
+        <!-- codeupdate -->
+          <div class="sectoin-title addcart-mobile">
+            <h2 class="h2-mobile">{{ $store.state.resource.boxstoragestep2.heading }}</h2>
+         
+        <div
+          class="container"
+          v-for="(item, key) in vmodel.boxstorages"
+          :key="key"
+        >
+          <div class="row" id="addcart-mobile-row">
+            <div class="col"  style="text-align: center">
+              <!-- <div class="img-content-mobile img"> -->
+                <img :src="item.image" height="70px" width="70px" />
+              <!-- </div> -->
+            </div>
+
+            <div class="col">
+              <div>
+                <h3>{{ item.title }}</h3>
+              </div>
+              <div>
+                <span class="price-per">HKD {{ item.price }} </span>
+                <span class="price-per">
+                  - {{ $store.state.resource.boxstoragestep2.boxmonth }}</span
+                >
+              </div>
+            </div>
+
+            <div class="col" id="addCart">
+          
+              <vue-number-input
+                v-model="item.value"
+                :min="0"
+                :max="30"
+                inline
+                size="small"
+                center
+                controls
+                @change="calculate(item.index)"
+              ></vue-number-input>
+           
+            </div>
+
+          </div>
+        </div>
+
+          <div class="row justify-content-end">
+              <a
+                href="#"
+                class="btn btn-primary book-now1"
+                style="background: #4b5fc4"
+              >
+                {{ $store.state.resource.boxstoragestep2.btntotal }}:
+              </a>
+            
+            <div class="count">
+              <h3>{{ vmodel.totalbox }}</h3>
+            </div>
+          
+              <a
+                href="#"
+                class="btn btn-primary looking-better1"
+                style="background: #e83828"
+                v-on:click="checklogin()"
+              >
+                {{ $store.state.resource.boxstoragestep2.btnconfirm }}</a
+              >
+            
+            </div>
+
+         </div>
+
+        <!-- endcodeupdate -->
+        <div class="container addcart">
           <div class="sectoin-title">
             <h2>{{ $store.state.resource.boxstoragestep2.heading }}</h2>
           </div>
@@ -88,7 +161,7 @@
                           : ''
                       "
                     >
-                      <span class="price-per">HKD</span>{{ item.price }}
+                      <span class="price-per">HKD</span> {{ item.price }}
                       <span class="price-per">{{
                         $store.state.resource.boxstoragestep2.boxmonth
                       }}</span>
@@ -99,8 +172,8 @@
                       v-model="item.value"
                       :min="0"
                       :max="30"
+                      size="small"
                       inline
-                      size="large"
                       center
                       controls
                       @change="calculate(item.index)"
@@ -110,31 +183,35 @@
               </div>
             </li>
           </ul>
-          <div class="row justify-content-end">
-            <div class="col-1 buttons2">
+          
+           <div class="row justify-content-end web-count">
               <a
                 href="#"
                 class="btn btn-primary book-now1"
-                style="background: #4B5FC4"
+                style="background: #4b5fc4"
               >
                 {{ $store.state.resource.boxstoragestep2.btntotal }}:
               </a>
-            </div>
-            <div class="col-1 count" style="padding: 10px">
+            
+            <div class="count">
               <h3>{{ vmodel.totalbox }}</h3>
             </div>
-            <div class="col-1 buttons2">
+          
               <a
                 href="#"
                 class="btn btn-primary looking-better1"
-                style="background: #E83828"
+                style="background: #e83828"
                 v-on:click="checklogin()"
               >
                 {{ $store.state.resource.boxstoragestep2.btnconfirm }}</a
               >
+            
             </div>
-          </div>
+
         </div>
+
+       
+           
       </section>
     </div>
     <div>
@@ -255,7 +332,7 @@ a.looking-better1 {
   background: #ef2b37;
   border: 0;
   outline: 0;
-  padding: 15px 14px 15px 45px;
+  padding: 15px 10px 5px 33px;
   position: relative;
 }
 a {
@@ -291,10 +368,6 @@ a.book-now1 {
   position: relative;
 }
 
-.buttons2 {
-  display: contents !important;
-}
-
 body {
   padding: 40px;
 }
@@ -309,7 +382,8 @@ body {
 .count {
   font-size: 25px;
   color: #465ecb;
-  text-align: right;
+  text-align: center;
+  padding: 10px;
 }
 
 .total {
@@ -321,7 +395,12 @@ body {
 .img-content img {
   height: 250px !important;
 }
+/* codeupdate */
+.h2-mobile{
+  padding-bottom: 55px;
+}
 
+/* endcodeupdate */
 [v-cloak] {
   display: none;
 }
@@ -357,17 +436,23 @@ body {
 }
 </style>
 <style>
-.number-input {
-  font-size: 60px !important;
-  border: transparent !important;
-  line-height: 80% !important;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #455a64;
+
+.button{
+  display: none;
+}
+
+.addcart-mobile {
+  display: none;
+}
+
+#addcart-mobile-row{
+background-color: #d9ecf2;
+  border: 2px solid #d9ecf2;
+  /* padding: 20px 10px; */
+  /* margin: 4px;  */
+  /* font-size: small; */
+  margin:0px 0px ;
+  border-bottom-right-radius: 15px;
 }
 
 .number-input__button--minus {
@@ -382,13 +467,12 @@ body {
   border-left: transparent !important;
   right: 1px;
   width: 4rem !important;
-  height: 4rem !important;
-  padding-right: 20px;
-  margin-top: 10px;
+  /* height: 4rem !important; */
+ 
 }
 
 .number-input__input {
-  font-size: 60px !important;
+  font-size: 60px!important;
   border: transparent !important;
   line-height: 80% !important;
   font-family: Roboto;
@@ -402,4 +486,85 @@ body {
 .modal {
   z-index: 1050 !important;
 }
+
+@media (max-width: 768px) {
+  .addcart {
+    display: none;
+  }
+
+  .addcart-mobile {
+    display: block;
+   
+  }
+  .addcart-mobile container row {
+    display: block;
+    border-bottom-right-radius: 25px;
+  }
+
+  #addcart-mobile-row .col h3 {
+    font-size: medium;
+  }
+   #addcart-mobile-row .col span{
+    font-size: medium;
+  }
+
+  #addCart .number-input__input {
+    font-size: 60px!important;
+     padding: 0 1px 0 1px;
+  }
+  #addCart .number-input__button--minus {
+    max-width: 35px;   
+   }
+    #addCart .number-input__button--plus {
+     max-width: 35px;
+   
+    
+   }
+
+}
+
+@media only screen and (max-width: 425px) {
+  .addcart-mobile {
+    display: block;
+   
+  }
+
+  #addcart-mobile-row .col h3 {
+    font-size: small;
+  }
+   #addcart-mobile-row .col span{
+    font-size: small;
+  }
+
+  
+   #addcart-mobile-row .col{
+     padding: 0 1px 0 1px;
+   }
+ 
+   #addCart .number-input__button--minus {
+    max-width: 24px;
+   
+    background-color: #3c549e;
+   }
+    #addCart .number-input__button--plus {
+     max-width: 24px;
+    
+    background-color: #3c549e;
+   }
+   
+   
+   #addCart .number-input__input  {
+      font-size: 33px !important;
+       padding: 0 1px 0 1px;
+      background-color: #d9ecf2;
+  
+}
+
+      /* #addCart .number-input {
+    max-width: 100px;
+    max-height: 50px;
+ 
+   } */
+}
+
 </style>

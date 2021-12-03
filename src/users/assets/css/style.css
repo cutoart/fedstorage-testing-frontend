@@ -849,6 +849,7 @@ section { padding: 50px 0px 0px; }
   list-style: none;
   display: flex;
   justify-content: center;
+  /* codeupdate */
 }
 .footer .footer-middle .footer-middle-content .social-links ul li {
   display: flex;
@@ -876,12 +877,20 @@ section { padding: 50px 0px 0px; }
   font-size: 0;
   color: #ffffff;
 }
-
+/* codeupdate */
 .footer .footer-middle .footer-middle-content .social-links ul li a.facebook {
-  margin-right: -10px;
+  /* margin-right: -10px; */
   vertical-align: middle;
-  margin-bottom: -16px;
+  margin-bottom: -6px;
 }
+
+.footer .footer-middle .footer-middle-content .social-links ul li a.instagram {
+  /* margin-right: -10px; */
+  vertical-align: middle;
+  margin-bottom: -3px;
+}
+
+/* codeupdate */
 .footer .footer-middle .footer-middle-content .social-links ul li a.facebook i {
   font-size: 30px;
 }

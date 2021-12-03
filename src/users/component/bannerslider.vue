@@ -18,6 +18,7 @@
               :src="$store.state.apiURL + '/banner/' + banner.image"
               :class="banner.url != null ? 'cursor' : ''"
               class="banner-image"
+              style="object-fit:cover"
             />
             <a id="bannerUrl" :href="banner.url"></a>
           </div>

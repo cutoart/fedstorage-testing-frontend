@@ -29,7 +29,8 @@
                       {{ list.name }}
                     </div>
                     <div class="col-10 row">
-                      <span
+                      <!-- codeupdate -->
+                     <router-link :to="'/selfstorage/'+item._id" 
                         class="col-6 span-content"
                         v-for="item in items.filter(
                           (a) => a.state['value'] == list.id
@@ -41,7 +42,7 @@
                             ? item.branch.label.split("/")[1]
                             : item.branch.label.split("/")[0]
                         }}
-                      </span>
+                     </router-link>
                     </div>
                   </div>
                 </div>
@@ -104,10 +105,11 @@
             </p>
           </div>
           <ul class="row">
-            <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3">
+              <li id="self-store-cont" class="col-md-4">
+            <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
-                  <img src="../assets/images/our-feature-1.png" />
+                  <img src="../assets/images/Pickup.png" />
                 </div>
                 <div class="content">
                   <h3 class="title">
@@ -144,10 +146,11 @@
                 </div>
               </div>
             </li>
-            <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3">
+              <li id="self-store-cont" class="col-md-4">
+            <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
-                  <img src="../assets/images/our-feature-1.png" />
+                  <img src="../assets/images/Store.png" />
                 </div>
                 <div class="content">
                   <h3 class="title">
@@ -181,10 +184,11 @@
                 </div>
               </div>
             </li>
-            <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3">
+              <li id="self-store-cont" class="col-md-4">
+            <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
-                  <img src="../assets/images/our-feature-1.png" />
+                  <img src="../assets/images/Packing.png" />
                 </div>
                 <div class="content">
                   <h3 class="title">
@@ -287,9 +291,11 @@ export default {
   right: 0;
   padding: 0px 0px !important;
 }
+/* codeupdate */
 .btn-book {
-  margin-left: 47px;
+  margin-left: 15px;
 }
+/* endcodeupdate */
 
 .our-feature ul li .content-wrap .content a.book-now {
   background: #465ecb;
@@ -344,28 +350,32 @@ export default {
 .banner-image {
   max-height: 600px;
 }
+/* codeupdate */
 .btn-book {
-  display: inline-flex;
+  display:inline-flex;
 }
 
 @media only screen and (max-width: 1200px) {
   .btn-book {
-    margin-left: 47px;
+     margin-left: 15px;  
+    
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .btn-book {
-    margin-left: 47px;
+      margin-left: 15px;  
   }
-  .our-feature ul li .content-wrap .content a.book-now {
+
+  /* endcodeupdate */
+  /* .our-feature ul li .content-wrap .content a.book-now {
     font-size: 19px !important;
     padding: 15px 100px 15px 10px;
   }
   .our-feature ul li .content-wrap .content a.looking-better {
     padding: 15px 100px 15px 44px;
     font-size: 18px !important;
-  }
+  } */
 }
 
 @media only screen and (max-width: 992px) {
@@ -384,9 +394,7 @@ export default {
   }
 
   .btn-book {
-    display: inline-flex;
-    height: 40px;
-    margin-left: 47px;
+     margin-left: 15px;  
   }
 
   .btn-book .book-now {
@@ -399,7 +407,7 @@ export default {
     z-index: 1;
     padding-top: 8px !important;
     font-size: 16px !important;
-    margin-left: -17px;
+    /* margin-left: -17px; */
   }
 }
 /* @media only screen and (min-width: 768px) and (max-width: 992px)  {
@@ -413,73 +421,14 @@ export default {
   }
 } */
 @media only screen and (max-width: 768px) {
-  .banner-image {
-    height: auto !important;
-  }
-  .our-storage,
-  .our-feature {
-    padding: 25px 0px;
-  }
-  .our-storage .container,
-  .our-feature .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  #self-store-cont {
-    margin-bottom: 20px;
-  }
-
-  .our-storage
-    ul
-    li
-    .content-wrap
-    .content
-    .box-storage
-    .title-content:first-child {
-    border-right: none;
-  }
-
-  .our-feature ul {
-    padding-top: 20px;
-  }
-  .our-feature ul li .content-wrap .content a.book-now {
-    padding: 15px 70px 15px 10px;
-    font-size: 19px !important;
-  }
-  .our-feature ul li .content-wrap .content a.looking-better {
-    padding: 15px 34px 15px 44px;
-    font-size: 18px !important;
-  }
-  /* .our-feature ul li .content-wrap .content a.book-now {
-    font-size: 19px !important;
-  }
-  .our-feature ul li .content-wrap .content a.looking-better {
-    font-size: 18px !important;
-  } */
+  
   .btn-book {
-    display: inline-flex;
-    height: 40px;
-    margin-left: 49px;
+   margin-left: auto;  
   }
-
-  .btn-book .book-now {
-    z-index: 2;
-    padding-top: 8px !important;
-    font-size: 16px !important;
   }
-
-  .btn-book .looking-better {
-    z-index: 1;
-    padding-top: 8px !important;
-    font-size: 16px !important;
-    margin-left: -17px;
-  }
-}
-
 @media only screen and (max-width: 425px) {
   .btn-book {
-    margin-left: 47px;
+  margin-left: 15px;
   }
   .our-feature ul li .content-wrap .content a.book-now {
     font-size: 22px !important;

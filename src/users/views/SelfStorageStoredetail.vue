@@ -24,7 +24,7 @@
                   :class="index == 0 ? 'carousel-item active' : 'carousel-item'"
                 >
                   <div class="image-wrapper">
-                    <img :src="$store.state.apiURL + '/store/' + image" />
+                    <img :src="$store.state.apiURL + '/store/' + image" style="object-fit:cover"/>
                   </div>
                 </div>
                 <a
@@ -192,7 +192,7 @@
             </table>
           </div>
         </div>
-        <div class="row image-wrapper">
+        <div class="row">
           <div
             v-if="
               vmodel.selfstoragestep2.storedetail.iframe != undefined &&
@@ -209,11 +209,11 @@
             ></iframe>
           </div>
         </div>
+    
         <div class="row">
-          <div class="font-weight-normal mt-4" style="display: flex">
+          <div class="font-weight-normal mt-4"  style="display:flex">
             <div
-              class="pr-3 firsticon"
-              style="padding-top: 7px"
+              class="pr-3"
               v-if="
                 vmodel.selfstoragestep2.storedetail.facilities != undefined &&
                 vmodel.selfstoragestep2.storedetail.facilities.length > 0
@@ -223,11 +223,10 @@
                   : false
               "
             >
-              <img src="../assets/images/downloadNew.png" height="45" width="52" />
+              <img src="../assets/images/downloadNew.png" height="45" width="45" />
             </div>
             <div
               class="pr-3"
-              style="padding-top: 7px"
               v-if="
                 vmodel.selfstoragestep2.storedetail.facilities != undefined &&
                 vmodel.selfstoragestep2.storedetail.facilities.length > 0
@@ -237,7 +236,7 @@
                   : false
               "
             >
-              <img src="../assets/images/vector.png" height="41" width="41" />
+              <img src="../assets/images/vector.png" height="45" width="45" />
             </div>
             <div
               class="pr-3"
@@ -252,13 +251,11 @@
             >
               <img
                 src="../assets/images/video-camera.png"
-                height="56"
-                width="52"
+                height="45" width="45"
               />
             </div>
             <div
               class="pr-3"
-              style="padding-top: 4px"
               v-if="
                 vmodel.selfstoragestep2.storedetail.facilities != undefined &&
                 vmodel.selfstoragestep2.storedetail.facilities.length > 0
@@ -268,11 +265,10 @@
                   : false
               "
             >
-              <img src="../assets/images/wifi.png" height="47" width="47" />
+              <img src="../assets/images/wifi.png" height="45" width="45" />
             </div>
             <div
               class="pr-3"
-              style="padding-top: 9px"
               v-if="
                 vmodel.selfstoragestep2.storedetail.facilities != undefined &&
                 vmodel.selfstoragestep2.storedetail.facilities.length > 0
@@ -282,7 +278,7 @@
                   : false
               "
             >
-              <img src="../assets/images/weather.png" />
+              <img src="../assets/images/weather.png" height="45" width="45" />
             </div>
           </div>
         </div>
@@ -290,7 +286,7 @@
           <div
             v-html="vmodel.selfstoragestep2.storedetail.remarksdetail"
             class="form-group text-left font-weight-normal"
-            style="margin-top: 10px"
+            
           ></div>
         </div>
       </div>
@@ -299,7 +295,7 @@
           <CCardBody style="padding-top: 0px">
             <CRow>
               <div class="row border-dark" >
-                <div class="col-12">
+                <div class="col-12" style="margin-top:15px">
                   <span>{{
                     $store.state.resource.selfstoragestep2storedetail
                       .registeronline
@@ -511,6 +507,7 @@
                     float: left;
                     font-size: 24px;
                     font-weight: 400 !important;
+                    margin-top :10px;
                   "
                 >
                   <strong>{{
@@ -837,6 +834,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .title {
   font-family: Roboto;
   font-style: normal;
@@ -1040,9 +1038,6 @@ export default {
     margin-top: 10px;
     margin-bottom: -55px;
   }
-  .firsticon {
-    margin-left: 15px;
-  }
   .pr-3,
   img {
     margin-top: 20px;
@@ -1090,10 +1085,7 @@ export default {
   .image-map[data-v-048f5b67] {
     width: 100%;
   }
-  .firsticon {
-    margin-left: 15px;
-  }
-
+  
   .pr-3,
   img {
     margin-top: 20px;

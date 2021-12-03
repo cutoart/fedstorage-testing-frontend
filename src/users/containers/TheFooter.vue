@@ -46,47 +46,83 @@
       <div class="footer-top">
         <div class="container">
           <div class="row footer-area">
-            <div class="content-space">
+
+           
+<div class="col-md-4" style="text-align: center">
+          <div class="ori-content">
               <a class="footer-content" href="#">
                 {{ $store.state.resource.footer.ourservices }}</a
               >
-            </div>
-            <div class="content-space">
+            
+           
               <router-link :to="{ name: 'AboutUs' }" class="footer-content">
                 {{ $store.state.resource.header.aboutus }}</router-link
               >
-            </div>
-            <div class="content-space">
+          
+           
               <router-link :to="{ name: 'FAQ' }" class="footer-content">
                 {{ $store.state.resource.header.faq }}</router-link
               >
-            </div>
-            <div class="img-logo">
+          </div>
+               <div class="img-logo col-md-4 mobile-logo" style="text-align: center">
               <router-link :to="{ name: 'Home' }"
                 ><img
                   src="/assets/images/logo.png"
                   class="custom-logo"
                   alt=""
                   itemprop="logo"
+                   style="height: 50px"
               /></router-link>
             </div>
-            <div class="content-space">
+            
+  </div>
+            <div class="img-logo col-md-4 ori-logo" style="text-align: center">
+              <router-link :to="{ name: 'Home' }"
+                ><img
+                 src="/assets/images/logo.png"
+                  class="custom-logo"
+                  alt=""
+                  itemprop="logo"
+                   style="height: 50px"
+              /></router-link>
+            </div>
+
+            
+
+  <div class="col-md-4" style="text-align: center">
+  <div class="mobile-content">
+                 <a class="footer-content" href="#">
+                {{ $store.state.resource.footer.ourservices }}</a
+              >
+            
+           
+              <router-link :to="{ name: 'AboutUs' }" class="footer-content">
+                {{ $store.state.resource.header.aboutus }}</router-link
+              >
+          
+           
+              <router-link :to="{ name: 'FAQ' }" class="footer-content">
+                {{ $store.state.resource.header.faq }}</router-link
+              >
+</div>
               <router-link :to="{ name: 'ContactUs' }" class="footer-content">
                 {{ $store.state.resource.header.contactus }}</router-link
               >
-            </div>
-            <div class="content-space">
+            
+           
               <a v-on:click="changelanguage()" class="footer-content">
                 {{ $store.state.resource.footer.eng }}</a
               >
-            </div>
-            <div class="content-space">
+            
+           
               <a
                 class="footer-content"
                 href="mailto:support@fedstorage.com.hk"
                 >{{ $store.state.resource.footer.support }}</a
               >
-            </div>
+            
+
+  </div>
           </div>
         </div>
       </div>
@@ -104,7 +140,7 @@
                   ></a>
                 </li>
                 <li>
-                  <a href="#"
+                  <a href="#" class="instagram"
                     ><span><i class="bx bxl-instagram"></i></span
                   ></a>
                 </li>
@@ -169,6 +205,7 @@ export default {
 }
 .footer-detail {
   height: 90px;
+ /* margin-top: 9px; */
 }
 .footer-area {
   margin: 0;
@@ -185,7 +222,16 @@ export default {
   color: #000000;
   font-weight: bold;
   font-size: 14px;
+  padding: 15px;
 }
+
+.mobile-logo{
+display: none;
+}
+.mobile-content{
+display: none;
+}
+
 /* @media only screen and (max-width: 1024px) {
   .des{
     color: #ffffff;
@@ -201,7 +247,23 @@ export default {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
+
+.mobile-logo{
+display: block;
+}
+.mobile-content{
+display: block;
+}
+
+  .ori-logo{
+display: none;
+}
+.ori-content{
+display: none;
+}
+
+
   .des {
     color: #ffffff !important;
     font-size: 15px;
@@ -220,7 +282,6 @@ export default {
   }
   .footer-area {
     display: block;
-    margin-top: 10px;
   }
   .content-space {
     margin-top: 10px;
