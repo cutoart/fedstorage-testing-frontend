@@ -4,7 +4,7 @@
       <CCard>
         <CForm @submit.prevent="handleSubmit">
           <CCardHeader>
-            <strong>Add Banner</strong>
+            <strong>Add Web Banner</strong>
           </CCardHeader>
           <CCardBody>
             <CRow>

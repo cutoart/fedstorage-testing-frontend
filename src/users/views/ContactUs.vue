@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="fancy-header" class="fancy-header">
+    <header id="fancy-header" class="fancy-header" style="background:#f03c2c">
       <div class="container">
         <h2 class="fancy-title">
           {{ $store.state.resource.contactus.contactus }}

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header id="fancy-header" class="fancy-header">
+    <header id="fancy-header" class="fancy-header" style="background:#f03c2c"> 
       <div class="container">
         <h2 class="fancy-title">
           {{ $store.state.resource.promotion.promotion }}
@@ -10,6 +10,10 @@
     <div class="content" id="content">
       <div class="about-us-content" style="background: #f9f9f9">
         <div class="container">
+          <!-- slider added  -->
+          <PromotionSlider />
+          <br />
+          <!-- slider added end -->
           <CRow sm="12" v-if="commentIndex < items.length">
             <CCol
               sm="4"
@@ -48,6 +52,7 @@
               </div>
             </CCol>
           </CRow>
+
           <div
             class="from-group col-md-12 text-center"
             v-if="
@@ -77,11 +82,13 @@
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
 import ContactUsModal from "../../admin/views/ContactusModal";
+import PromotionSlider from "@/users/component/promotionslider";
 
 export default {
   name: "Promotion",
   components: {
     ContactUsModal,
+    PromotionSlider: PromotionSlider,
   },
   data() {
     return {

@@ -4,7 +4,7 @@
       <CCardHeader>
         <CRow>
           <CCol>
-            <strong>Banner</strong>
+            <strong>Banner Web</strong>
           </CCol>
           <CCol col="2">
             <CButton block router-link :to="{ name: 'AddBanner' }" color="dark"
