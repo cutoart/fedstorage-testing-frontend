@@ -34,6 +34,12 @@ const Banner = () =>
     import('@/admin/views/Banner/AddBanner')
 const BannerList = () =>
     import('@/admin/views/Banner/ListBanner')
+    //bannerWeb
+const BannerWeb = () =>
+    import('@/admin/views/BannerWeb/AddBanner')
+const BannerWebList = () =>
+    import('@/admin/views/BannerWeb/ListBanner')
+    //end bannerWeb
 const RegisterUserList = () =>
     import('@/admin/views/RegisterUser/RegisterUserList')
 const RegisterUser = () =>
@@ -271,6 +277,24 @@ function configRoutes() {
                     requiresAuth: true
                 },
             },
+            //bannerWeb
+            {
+                path: '/admin/bannerweblist',
+                name: 'BannerWebList',
+                component: BannerWebList,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
+                path: '/admin/addbannerweb',
+                name: 'AddBannerWeb',
+                component: BannerWeb,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+             //end bannerWeb
             {
                 path: '/admin/faqlist',
                 name: 'FAQs',

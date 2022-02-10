@@ -170,6 +170,19 @@ export default [
               },
             ],
           },
+          // BannerWeb
+          {
+            _name: "CSidebarNavDropdown",
+            name: "Banners Mobile",
+            icon: "cil-mail",
+            items: [
+              {
+                name: "List Banner Mobile",
+                to: { name: "BannerWebList" },
+              },
+            ],
+          },
+          // end BannerWeb
           {
             _name: "CSidebarNavDropdown",
             name: "Video",

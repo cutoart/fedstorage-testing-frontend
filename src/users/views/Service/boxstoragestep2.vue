@@ -11,23 +11,20 @@
           v-for="(item, key) in vmodel.boxstorages"
           :key="key"
         >
-          <div class="row" id="addcart-mobile-row">
-            <div class="col"  style="text-align: center">
-              <!-- <div class="img-content-mobile img"> -->
-                <img :src="item.image" height="70px" width="70px" />
+       
+          <div class="addcart-mobile-row">
+              <div class="item">
+            <div class="image"  >
+              <!-- <div class="img-content-mobile img" style='height: 70px; width: 70px;'> -->
+                <img :src="item.image" style='max-height: 70px; max-width: 70px;' />
               <!-- </div> -->
             </div>
 
-            <div class="col">
-              <div>
-                <h3>{{ item.title }}</h3>
-              </div>
-              <div>
-                <span class="price-per">HKD {{ item.price }} </span>
-                <span class="price-per">
-                  - {{ $store.state.resource.boxstoragestep2.boxmonth }}</span
-                >
-              </div>
+            <div class="description">
+            
+                <span>{{ item.title }}</span>
+                <span>HKD {{ item.price }} </span>
+                <span>{{ $store.state.resource.boxstoragestep2.boxmonth }}</span>
             </div>
 
             <div class="col" id="addCart">
@@ -44,7 +41,7 @@
               ></vue-number-input>
            
             </div>
-
+            </div>
           </div>
         </div>
 
@@ -226,9 +223,9 @@
 </template>
 
 <script>
+
 import VueNumberInput from "@chenfengyuan/vue-number-input";
 import ContactUsModal from "../../../admin/views/ContactusModal";
-
 export default {
   name: "app1",
   props: {
@@ -392,9 +389,9 @@ body {
   font-size: 60px;
 }
 
-.img-content img {
-  height: 250px !important;
-}
+/* .img-content img {
+  height: 70px !important;
+} */
 /* codeupdate */
 .h2-mobile{
   padding-bottom: 55px;
@@ -444,17 +441,83 @@ body {
 .addcart-mobile {
   display: none;
 }
+/* edit 2022 */
+.addcart-mobile-row{
+  max-width:100%;
+  height: 100%;
+  margin: 10px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
 
-#addcart-mobile-row{
-background-color: #d9ecf2;
-  border: 2px solid #d9ecf2;
-  /* padding: 20px 10px; */
-  /* margin: 4px;  */
-  /* font-size: small; */
-  margin:0px 0px ;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
+.image {
+  margin: 5px 0;
+  max-height:100%;
+}
+
+.item {
+  padding: 15px 15px;
+  height: 80px;
+  display: flex;
+  
+}
+ 
+.item:nth-child(3) {
+  border-top:  1px solid #E1E8EE;
+  border-bottom:  1px solid #E1E8EE;
+}
+
+.description {
+   margin: -7px 15px;
+  margin-right: 30px;
+  width: 85px;
+  text-align: center;
+}
+ 
+.description span {
+  font-size: 15px;
+  color: #465ecb;
+}
+ 
+.description span:first-child {
+  margin-bottom: 1px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 1px;
+  color: #86939E;
+}
+
+/* @media (max-width: 800px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    width: 50%;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .buttons {
+    margin-right: 20px;
+  }
+} */
+/* end edit 2022 */
 .number-input__button--minus {
   color: #455a64;
   border-right: transparent !important;
@@ -474,7 +537,7 @@ background-color: #d9ecf2;
 .number-input__input {
   font-size: 60px!important;
   border: transparent !important;
-  line-height: 80% !important;
+  /* line-height: 80% !important; */
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -501,25 +564,22 @@ background-color: #d9ecf2;
     border-bottom-right-radius: 25px;
   }
 
-  #addcart-mobile-row .col h3 {
-    font-size: medium;
-  }
-   #addcart-mobile-row .col span{
-    font-size: medium;
-  }
-
-  #addCart .number-input__input {
-    font-size: 60px!important;
-     padding: 0 1px 0 1px;
-  }
-  #addCart .number-input__button--minus {
-    max-width: 35px;   
+     #addCart .number-input__button--minus {
+    max-width: 34px;
+    background-color: #3c549e;
    }
     #addCart .number-input__button--plus {
-     max-width: 35px;
-   
-    
+     max-width: 34px;
+    background-color: #3c549e;
    }
+   
+   
+   #addCart .number-input__input  {
+      font-size: 33px !important;
+       padding: 0 1px 0 1px;
+      background-color: #d9ecf2;
+  
+}
 
 }
 
@@ -529,7 +589,7 @@ background-color: #d9ecf2;
    
   }
 
-  #addcart-mobile-row .col h3 {
+  /* #addcart-mobile-row .col h3 {
     font-size: small;
   }
    #addcart-mobile-row .col span{
@@ -539,7 +599,7 @@ background-color: #d9ecf2;
   
    #addcart-mobile-row .col{
      padding: 0 1px 0 1px;
-   }
+   } */
  
    #addCart .number-input__button--minus {
     max-width: 24px;

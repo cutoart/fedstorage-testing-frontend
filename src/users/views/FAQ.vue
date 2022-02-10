@@ -1,6 +1,6 @@
 <template>
   <div style="background: #f9f9f9">
-    <header id="fancy-header" class="fancy-header">
+    <header id="fancy-header" class="fancy-header" style="background:#f03c2c">
       <div class="container">
         <h2 class="fancy-title">{{ $store.state.resource.faq.faqheading }}</h2>
       </div>

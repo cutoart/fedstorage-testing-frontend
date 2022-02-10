@@ -1,7 +1,12 @@
 <template>
   <div v-if="$store.state.resource != null">
     <!-- Slider ============================================= -->
+    <div class="bannersliderweb">
     <BannerSlider />
+    </div>
+    <div class="bannerslidermobile">
+    <BannerSliderWeb />
+    </div>
     <!-- Cntent ============================================= -->
     <div class="content" id="content">
       <section class="our-storage">
@@ -224,6 +229,7 @@
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
 import BannerSlider from "@/users/component/bannerslider";
+import BannerSliderWeb from "@/users/component/bannersliderweb";
 
 export default {
   data() {
@@ -234,7 +240,7 @@ export default {
     };
   },
   components: {
-    BannerSlider: BannerSlider,
+    BannerSlider: BannerSlider,BannerSliderWeb: BannerSliderWeb,
   },
   methods: {
     booknow(url) {
@@ -281,6 +287,9 @@ export default {
 };
 </script>
 <style scoped>
+.bannerslidermobile{
+  display:none;
+}
 .sectoin-title h2 {
   font-weight: bold;
   color:#4B5FC4 !important
@@ -424,6 +433,13 @@ export default {
   
   .btn-book {
    margin-left: auto;  
+  }
+  .bannersliderweb{
+    display: none;
+  }
+  .bannerslidermobile{
+    display: block;
+    margin: auto;
   }
   }
 @media only screen and (max-width: 425px) {

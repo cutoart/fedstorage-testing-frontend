@@ -1,6 +1,12 @@
 <template>
   <div style="background: #e5e5e5">
+     <div class="bannersliderweb">
+          
     <BannerSlider />
+    </div>
+    <div class="bannerslidermobile">
+    <BannerSliderWeb />
+    </div>
     <div class="content" id="content">
       <section class="our-feature2">
         <div class="container">
@@ -282,6 +288,7 @@ import Vue from "vue";
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
 import BannerSlider from "@/users/component/bannerslider";
+import BannerSliderWeb from "@/users/component/bannersliderweb";
 Vue.config.productionTip = false;
 
 export default {
@@ -297,7 +304,7 @@ export default {
     };
   },
   components: {
-    BannerSlider: BannerSlider,
+    BannerSlider: BannerSlider,BannerSliderWeb: BannerSliderWeb,
   },
   methods: {
     getBanner(path) {
@@ -351,6 +358,9 @@ export default {
 </script>
 
 <style scoped>
+.bannerslidermobile{
+  display:none;
+}
 .map1 {
   padding-left: 0px !important;
 }
@@ -561,6 +571,15 @@ a.looking-better:before {
 }
 
 @media only screen and (max-width: 768px) {
+  /* added arthur for mobile banner */
+   .bannersliderweb{
+    display: none;
+  }
+  .bannerslidermobile{
+    display: block;
+    margin: auto;
+  }
+   /* end added arthur for mobile banner */
   .image-map1 {
     width: 100%;
     margin-top: 0px;
