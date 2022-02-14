@@ -168,21 +168,14 @@ export default [
                 name: "List Banner",
                 to: { name: "BannerList" },
               },
-            ],
-          },
-          // BannerWeb
-          {
-            _name: "CSidebarNavDropdown",
-            name: "Banners Mobile",
-            icon: "cil-mail",
-            items: [
+               // BannerWeb
               {
                 name: "List Banner Mobile",
                 to: { name: "BannerWebList" },
               },
+               // end BannerWeb
             ],
           },
-          // end BannerWeb
           {
             _name: "CSidebarNavDropdown",
             name: "Video",

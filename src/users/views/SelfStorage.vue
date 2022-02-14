@@ -89,9 +89,8 @@
             v-for="item in items"
             v-bind:key="item.id"
             id="carousel-row"
-            ref="carousel-row"
           >
-            <div class="col-lg-6 col-sm-12 p-0" id="carousel-left">
+            <div class="col-lg-6  p-0" id="carousel-left">
               <div class="row slider">
                 <section id="slider" class="slider-img">
                   <div
@@ -143,7 +142,7 @@
             </div>
             <!-- <div class="col-lg-8 col-sm-12 p-0 " style="height:463px !important"> -->
             <!-- start col -->
-            <div class="col-lg-6 col-sm-12 p-0" id="carousel-right">
+            <div class="col-lg-6 p-0" id="carousel-right">
               <div class="scrollbar">
                 <div class="col-12 title" style="color: #282020e0">
                   <h5
@@ -326,47 +325,6 @@ export default {
     getBanner(path) {
       window.open(path);
     },
-    // ayz_change-orientation
-
-    handleOrientationChange() {
-      const orientation = window.screen.orientation.type;
-      if (orientation === "portrait-primary") {
-        console.log("potrait-primary or secondary");
-        var element4 = document.getElementById("carousel-row");
-        element4.style.flexWrap = "wrap";
-        var element5 = document.getElementById("carousel-right");
-        element5.classList.add("col-sm-12");
-        var element6 = document.getElementById("carousel-left");
-        element6.classList.add("col-sm-12");
-      } else if (orientation === "landscape-primary") {
-
-        console.log("this is laptop/desktop version");
-
-        var element3 = document.getElementById("carousel-row");
-        // for (var i = 0; i < element3.length; i++) {
-          element3.style.flexWrap = "nowrap";
-        // }
-
-        var element = document.getElementById("carousel-right");
-        // for (var j = 0; j < element.length; j++) {
-          element.classList.remove("col-sm-12");
-        // }
-
-        var element2 = document.getElementById("carousel-left");
-        // for (var k = 0; k < element2.length; k++) {
-          element2.classList.remove("col-sm-12");
-        // }
-
-      } else if (orientation === "landscape-secondary") {
-        console.log("landscape-secondary");
-      } else if (orientation === undefined) {
-        console.log("undefined");
-        // landscape mode
-      } else {
-        console.log("undefined");
-      }
-    },
-    // end ayz_change-orientation
   },
   props: {
     vmodel: {
@@ -415,15 +373,6 @@ export default {
 
 <style scoped>
 
-/* [id^=carousel-row]{
-  flex-wrap : wrap;
-}
-[id^=carousel-left]{
- 
-}
-[id^=carousel-right]{
- 
-} */
 .bannerslidermobile {
   display: none;
 }
@@ -635,9 +584,9 @@ a.looking-better:before {
     margin-top: 25px;
   }
   /*ayz-remove wrap to nowrap for flex-wrap*/
-  /* #carousel-row {
+  #carousel-row {
     flex-wrap: nowrap;
-  } */
+  }
   /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
@@ -658,6 +607,11 @@ a.looking-better:before {
 }
 
 @media only screen and (max-width: 765px) {
+    /*ayz-remove wrap to nowrap for flex-wrap*/
+   #carousel-row {
+    flex-wrap: wrap;
+  }
+    /*end ayz-remove wrap to nowrap for flex-wrap*/
   .our-feature2[data-v-47472484] {
     padding-top: 0px;
   }
