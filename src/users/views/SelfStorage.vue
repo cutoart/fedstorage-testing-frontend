@@ -109,7 +109,7 @@
                         <div class="image-wrapper">
                           <img
                             :src="$store.state.apiURL + '/store/' + image"
-                            style="object-fit: cover"
+  
                           />
                         </div>
                       </div>
@@ -611,6 +611,7 @@ a.looking-better:before {
   #carousel-row {
     flex-wrap: nowrap;
   }
+
   /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
