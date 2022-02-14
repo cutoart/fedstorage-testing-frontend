@@ -1,20 +1,19 @@
 <template>
   <div style="background: #e5e5e5">
-     <div class="bannersliderweb">
-          
-    <BannerSlider />
+    <div class="bannersliderweb">
+      <BannerSlider />
     </div>
     <div class="bannerslidermobile">
-    <BannerSliderWeb />
+      <BannerSliderWeb />
     </div>
     <div class="content" id="content">
       <section class="our-feature2">
         <div class="container">
           <div class="row background">
-            <div class="col-6 map1 form-group" style="margin-bottom:0px">
+            <div class="col-6 map1 form-group" style="margin-bottom: 0px">
               <div
                 class="col-12"
-                style="border-radius:15px;background-color:white"
+                style="border-radius: 15px; background-color: white"
               >
                 <div class="row">
                   <div class="col-12 mb-4 location">
@@ -22,14 +21,16 @@
                   </div>
                 </div>
                 <div
-                  class="row form-group" style="min-height:260px"
+                  class="row form-group"
+                  style="min-height: 260px"
                   v-for="list in listOfMapValue"
                   :key="list.id"
                 >
                   <div class="col list">{{ list.name }}</div>
                   <div class="col-10 row">
                     <!-- codeupdate -->
-                      <router-link :to="'/selfstorage/' + item._id"
+                    <router-link
+                      :to="'/selfstorage/' + item._id"
                       class="col-6 span-content"
                       v-for="item in items.filter(
                         (a) => a.state['value'] == list.id
@@ -47,19 +48,24 @@
                             : item.branch.label.split("/")[1]
                           : item.branch.label.split("/")[0]
                       }}</router-link
-                    > <!-- endcodeupdate -->
+                    >
+                    <!-- endcodeupdate -->
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-6 map form-group" style="min-height:350px">
-               <div
-                style="border-radius:15px;background-color:white;padding-top: 15px;
-    padding-bottom: 15px;"
+            <div class="col-6 map form-group" style="min-height: 350px">
+              <div
+                style="
+                  border-radius: 15px;
+                  background-color: white;
+                  padding-top: 15px;
+                  padding-bottom: 15px;
+                "
                 v-if="
                   setting.iframe != undefined &&
-                    setting.iframe != null &&
-                    setting.iframe != ''
+                  setting.iframe != null &&
+                  setting.iframe != ''
                 "
                 class="col-12 image-map1"
               >
@@ -77,13 +83,15 @@
     </div>
     <div class="content" id="content">
       <section class="our-feature1">
-        <div class="container details" style="padding-right:0px">
+        <div class="container details" style="padding-right: 0px">
           <div
             class="row border col-12"
             v-for="item in items"
             v-bind:key="item.id"
+            id="carousel-row"
+            ref="carousel-row"
           >
-            <div class="col-lg-6 col-sm-12 p-0">
+            <div class="col-lg-6 col-sm-12 p-0" id="carousel-left">
               <div class="row slider">
                 <section id="slider" class="slider-img">
                   <div
@@ -100,7 +108,10 @@
                         "
                       >
                         <div class="image-wrapper">
-                          <img :src="$store.state.apiURL + '/store/' + image" style="object-fit:cover"/>
+                          <img
+                            :src="$store.state.apiURL + '/store/' + image"
+                            style="object-fit: cover"
+                          />
                         </div>
                       </div>
                       <a
@@ -131,16 +142,17 @@
               </div>
             </div>
             <!-- <div class="col-lg-8 col-sm-12 p-0 " style="height:463px !important"> -->
-            <div class="col-lg-6 col-sm-12 p-0 ">
+            <!-- start col -->
+            <div class="col-lg-6 col-sm-12 p-0" id="carousel-right">
               <div class="scrollbar">
-                <div class="col-12 title" style="color:#282020e0">
+                <div class="col-12 title" style="color: #282020e0">
                   <h5
                     v-on:click="$router.push('/selfstorage/' + item._id)"
                     style="
-                    cursor: pointer;
-                    font-size: 1.25rem !important;
-                    margin-bottom: 0 !important;
-                  "
+                      cursor: pointer;
+                      font-size: 1.25rem !important;
+                      margin-bottom: 0 !important;
+                    "
                   >
                     {{ item.storeName }} :
                     {{
@@ -275,6 +287,7 @@
                 </div>
               </div>
             </div>
+            <!-- end column -->
           </div>
         </div>
       </section>
@@ -283,7 +296,6 @@
 </template>
 
 <script>
-     
 import Vue from "vue";
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
@@ -304,12 +316,57 @@ export default {
     };
   },
   components: {
-    BannerSlider: BannerSlider,BannerSliderWeb: BannerSliderWeb,
+    BannerSlider: BannerSlider,
+    BannerSliderWeb: BannerSliderWeb,
+  },
+  mounted() {
+    window.addEventListener("orientationchange", this.handleOrientationChange);
   },
   methods: {
     getBanner(path) {
       window.open(path);
     },
+    // ayz_change-orientation
+
+    handleOrientationChange() {
+      const orientation = window.screen.orientation.type;
+      if (orientation === "portrait-primary") {
+        console.log("potrait-primary or secondary");
+        var element4 = document.getElementById("carousel-row");
+        element4.style.flexWrap = "wrap";
+        var element5 = document.getElementById("carousel-right");
+        element5.classList.add("col-sm-12");
+        var element6 = document.getElementById("carousel-left");
+        element6.classList.add("col-sm-12");
+      } else if (orientation === "landscape-primary") {
+
+        console.log("this is laptop/desktop version");
+
+        var element3 = document.getElementById("carousel-row");
+        // for (var i = 0; i < element3.length; i++) {
+          element3.style.flexWrap = "nowrap";
+        // }
+
+        var element = document.getElementById("carousel-right");
+        // for (var j = 0; j < element.length; j++) {
+          element.classList.remove("col-sm-12");
+        // }
+
+        var element2 = document.getElementById("carousel-left");
+        // for (var k = 0; k < element2.length; k++) {
+          element2.classList.remove("col-sm-12");
+        // }
+
+      } else if (orientation === "landscape-secondary") {
+        console.log("landscape-secondary");
+      } else if (orientation === undefined) {
+        console.log("undefined");
+        // landscape mode
+      } else {
+        console.log("undefined");
+      }
+    },
+    // end ayz_change-orientation
   },
   props: {
     vmodel: {
@@ -354,12 +411,21 @@ export default {
     });
   },
 };
-
 </script>
 
 <style scoped>
-.bannerslidermobile{
-  display:none;
+
+/* [id^=carousel-row]{
+  flex-wrap : wrap;
+}
+[id^=carousel-left]{
+ 
+}
+[id^=carousel-right]{
+ 
+} */
+.bannerslidermobile {
+  display: none;
 }
 .map1 {
   padding-left: 0px !important;
@@ -461,7 +527,7 @@ a.looking-better:before {
   padding: 0px !important;
 }
 .slider-img .image-wrapper img {
-  height: 389px; 
+  height: 389px;
   width: 581px;
   padding: 30px 0px 24px 30px;
 }
@@ -515,14 +581,14 @@ a.looking-better:before {
   .our-feature2[data-v-47472484] {
     padding-top: 0px;
   }
-  .image-map1 {
+  /* .image-map1 {
     margin-top: 100px;
     width: 320px;
-  }
-  .image-map[data-v-47472484] {
+  } */
+  /* .image-map[data-v-47472484] {
     width: 270px;
     height: 268px;
-  }
+  } */
   .shop1[data-v-47472484] {
     margin-left: 255px;
     margin-top: -300px;
@@ -568,18 +634,23 @@ a.looking-better:before {
     margin-bottom: 20px;
     margin-top: 25px;
   }
+  /*ayz-remove wrap to nowrap for flex-wrap*/
+  /* #carousel-row {
+    flex-wrap: nowrap;
+  } */
+  /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
 @media only screen and (max-width: 768px) {
   /* added arthur for mobile banner */
-   .bannersliderweb{
+  .bannersliderweb {
     display: none;
   }
-  .bannerslidermobile{
+  .bannerslidermobile {
     display: block;
     margin: auto;
   }
-   /* end added arthur for mobile banner */
+  /* end added arthur for mobile banner */
   .image-map1 {
     width: 100%;
     margin-top: 0px;
@@ -680,7 +751,7 @@ a.looking-better:before {
   .scrollbar {
     height: 150px !important;
   }
-  .slider-img .image-wrapper img{
+  .slider-img .image-wrapper img {
     height: 384px;
   }
 }
@@ -712,7 +783,7 @@ a.looking-better:before {
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .image-map1 {
     margin-top: 0px !important;
-    width: 354px !important;
+    width: 100% !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
