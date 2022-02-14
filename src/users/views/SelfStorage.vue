@@ -607,14 +607,17 @@ a.looking-better:before {
     width: 100%;
     margin-top: 0px;
   }
+   /*ayz-remove wrap to nowrap for flex-wrap*/
+   #carousel-row {
+    flex-wrap: wrap;
+  }
+  /*end ayz-remove wrap to nowrap for flex-wrap*/
 }
 
 @media only screen and (max-width: 765px) {
-    /*ayz-remove wrap to nowrap for flex-wrap*/
-   /* #carousel-row {
-    flex-wrap: wrap;
-  } */
-    /*end ayz-remove wrap to nowrap for flex-wrap*/
+   
+  
+    
   .our-feature2[data-v-47472484] {
     padding-top: 0px;
   }
