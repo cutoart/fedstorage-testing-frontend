@@ -376,6 +376,9 @@ export default {
 .bannerslidermobile {
   display: none;
 }
+ #carousel-row {
+    flex-wrap: nowrap;
+  }
 .map1 {
   padding-left: 0px !important;
 }
@@ -584,9 +587,9 @@ a.looking-better:before {
     margin-top: 25px;
   }
   /*ayz-remove wrap to nowrap for flex-wrap*/
-  #carousel-row {
+  /* #carousel-row {
     flex-wrap: nowrap;
-  }
+  } */
   /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
