@@ -607,15 +607,19 @@ a.looking-better:before {
     width: 100%;
     margin-top: 0px;
   }
-   /*ayz-remove wrap to nowrap for flex-wrap*/
-   #carousel-row {
-    flex-wrap: wrap;
+    /*ayz-remove wrap to nowrap for flex-wrap*/
+  #carousel-row {
+    flex-wrap: nowrap;
   }
-  /*end ayz-remove wrap to nowrap for flex-wrap*/
+  /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
 @media only screen and (max-width: 765px) {
-   
+     /*ayz-remove wrap to nowrap for flex-wrap*/
+  #carousel-row {
+    flex-wrap: nowrap;
+  }
+  /*end ayz-remove wrap to nowrap for flex-wrap */
   
     
   .our-feature2[data-v-47472484] {
@@ -701,6 +705,11 @@ a.looking-better:before {
 }
 
 @media only screen and (max-width: 425px) {
+     /*ayz-remove wrap to nowrap for flex-wrap*/
+   #carousel-row {
+    flex-wrap: wrap;
+  }
+  /*end ayz-remove wrap to nowrap for flex-wrap*/
   .image-map1 {
     margin-top: 0px !important;
     width: 400px !important;
