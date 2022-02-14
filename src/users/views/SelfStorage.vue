@@ -703,6 +703,13 @@ a.looking-better:before {
     padding-left: 0px;
   }
 }
+@media only screen and (max-width: 700px) {
+     /*ayz-remove wrap to nowrap for flex-wrap*/
+   #carousel-row {
+    flex-wrap: wrap;
+  }
+ /*end ayz-remove wrap to nowrap for flex-wrap*/
+}
 
 @media only screen and (max-width: 425px) {
      /*ayz-remove wrap to nowrap for flex-wrap*/
