@@ -587,9 +587,9 @@ a.looking-better:before {
     margin-top: 25px;
   }
   /*ayz-remove wrap to nowrap for flex-wrap*/
-  /* #carousel-row {
+  #carousel-row {
     flex-wrap: nowrap;
-  } */
+  }
   /*end ayz-remove wrap to nowrap for flex-wrap */
 }
 
@@ -611,9 +611,9 @@ a.looking-better:before {
 
 @media only screen and (max-width: 765px) {
     /*ayz-remove wrap to nowrap for flex-wrap*/
-   #carousel-row {
+   /* #carousel-row {
     flex-wrap: wrap;
-  }
+  } */
     /*end ayz-remove wrap to nowrap for flex-wrap*/
   .our-feature2[data-v-47472484] {
     padding-top: 0px;
