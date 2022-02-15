@@ -306,7 +306,7 @@ export default {
 }
 /* endcodeupdate */
 
-.our-feature ul li .content-wrap .content a.book-now {
+.our-feature ul li .content-wrap .content a.book-now1 {
   background: #465ecb;
   border: 0;
   outline: 0;
@@ -315,7 +315,7 @@ export default {
   font-size: 18px !important;
   line-height: 24px;
 }
-.our-feature ul li .content-wrap .content a.looking-better {
+.our-feature ul li .content-wrap .content a.looking-better1 {
   background: #ef2b37;
   border: 0;
   outline: 0;
@@ -325,7 +325,7 @@ export default {
   line-height: 24px;
 }
 
-.our-feature ul li .content-wrap .content a.book-now:before {
+.our-feature ul li .content-wrap .content a.book-now1:before {
   content: "";
   position: absolute;
   top: 0;
@@ -335,7 +335,7 @@ export default {
   width: 0;
 }
 
-.our-feature ul li .content-wrap .content a.looking-better:before {
+.our-feature ul li .content-wrap .content a.looking-better1:before {
   content: "";
   position: absolute;
   top: 0;
@@ -405,20 +405,20 @@ export default {
   .btn-book {
      margin-left: 15px;  
   }
-
-  .btn-book .book-now {
+}
+  /* .btn-book .book-now {
     z-index: 2;
     padding-top: 8px !important;
     font-size: 16px !important;
-  }
+  } */
 
-  .btn-book .looking-better {
+  /* .btn-book .looking-better1 {
     z-index: 1;
     padding-top: 8px !important;
     font-size: 16px !important;
-    /* margin-left: -17px; */
-  }
-}
+    margin-left: -17px;
+  } */
+
 /* @media only screen and (min-width: 768px) and (max-width: 992px)  {
    .our-feature ul li .content-wrap .content a.book-now {
     font-size: 19px !important;
@@ -446,19 +446,19 @@ export default {
   .btn-book {
   margin-left: 15px;
   }
-  .our-feature ul li .content-wrap .content a.book-now {
+  .our-feature ul li .content-wrap .content a.book-now1 {
     font-size: 22px !important;
   }
-  .our-feature ul li .content-wrap .content a.looking-better {
+  .our-feature ul li .content-wrap .content a.looking-better1 {
     font-size: 23px !important;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  .our-feature ul li .content-wrap .content a.book-now {
+  .our-feature ul li .content-wrap .content a.book-now1 {
     font-size: 17px !important;
   }
-  .our-feature ul li .content-wrap .content a.looking-better {
+  .our-feature ul li .content-wrap .content a.looking-better1 {
     font-size: 17px !important;
   }
   /* .btn-book {
@@ -467,10 +467,10 @@ export default {
 }
 
 @media only screen and (max-width: 320px) {
-  .our-feature ul li .content-wrap .content a.book-now {
+  .our-feature ul li .content-wrap .content a.book-now1 {
     font-size: 12px !important;
   }
-  .our-feature ul li .content-wrap .content a.looking-better {
+  .our-feature ul li .content-wrap .content a.looking-better1 {
     font-size: 12px !important;
   }
   /* .btn-book {

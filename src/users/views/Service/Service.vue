@@ -164,7 +164,9 @@
                           }}</a
                         > -->
                         <a href="#" class="btn btn-primary book-now"
-                          >Book Now</a
+                          >{{
+                            $store.state.resource.service.boxstoragebtnbooknow
+                          }}</a
                         >
                         <a href="#" class="btn btn-primary looking-better">{{
                           $store.state.resource.service.movingservicebtnlooking
@@ -729,48 +731,15 @@ export default {
 </style>
 
 <style scoped>
-a.looking-better1 {
-  background: #ef2b37;
-  border: 0;
-  outline: 0;
-  padding: 15px 14px 15px 34px !important;
-  position: relative;
-  margin-left: 15px !important;
+/* ayz */
+.our-feature ul li .content-wrap .content a.book-now:before {
+    border-right: 45px solid #ffffff;
 }
-a {
-  font-size: 18px;
-  line-height: 24px;
-  color: #ffffff;
+.our-feature ul li .content-wrap .content a.looking-better:before {
+    border-left: 45px solid #ffffff;
 }
-a.looking-better1:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-bottom: 60px solid transparent;
-  border-left: 45px solid #ffffff;
-  width: 0;
-}
+/*end ayz */
 
-a.book-now1:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-top: 60px solid transparent;
-  border-right: 45px solid #ffffff;
-  width: 0;
-  margin-left: 15px !important;
-}
-
-a.book-now1 {
-  background: #465ecb;
-  border: 0;
-  outline: 0;
-  padding: 15px 45px 15px 14px !important;
-  position: relative;
-  margin-left: 15px !important;
-}
 
 .buttons2 {
   display: contents !important;
