@@ -14,9 +14,9 @@
           <PromotionSlider />
           <br />
           <!-- slider added end -->
-          <CRow sm="12" v-if="commentIndex < items.length">
+          <CRow sm="12"  md="4" v-if="commentIndex < items.length">
             <CCol
-              sm="4"
+              sm="12"
               md="4"
               v-for="commentIndex in commentsToShow"
               v-bind:key="commentIndex._id"
@@ -28,7 +28,9 @@
                   items[commentIndex - 1].image
                 "
                 class="image"
+                style="object-fit:fill"
               />
+              <div class="content">
               <div class="date">
                 <span>{{ items[commentIndex - 1].date }}</span>
               </div>
@@ -49,6 +51,7 @@
                   "
                   >{{ $store.state.resource.promotion.btnviewmore }} ></a
                 >
+              </div>
               </div>
             </CCol>
           </CRow>
@@ -131,8 +134,8 @@ export default {
 </script>
 <style scoped>
 .image {
-  height: 191px;
-  width: 370px;
+  height:50%;
+  width: 100%;
 }
 .date {
   margin-top: 14px;
@@ -162,8 +165,8 @@ export default {
 
 @media only screen and (max-width: 992px) {
   .image[data-v-67689c92] {
-    height: 160px;
-    width: 200px;
+    height:50%;
+  width: 100%;
   }
   .title[data-v-67689c92] {
     font-size: 20px;
@@ -173,8 +176,8 @@ export default {
 
 @media only screen and (max-width: 765px) {
   .image[data-v-67689c92] {
-    height: 160px;
-    width: 350px;
+    height:50%;
+  width: 100%;
   }
   .title[data-v-67689c92] {
     font-size: 25px;
@@ -184,7 +187,8 @@ export default {
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1170px) {
   .image {
-    width: 300px;
+    height: 250px;
+  width: 250px;
   }
 }
 </style>
