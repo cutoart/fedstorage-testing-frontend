@@ -120,7 +120,7 @@
                   <h3 class="title">
                     <a
                       v-on:click="booknow('/service/selfstorage')"
-                      style="cursor: pointer;font-size:22px"
+                      style="cursor: pointer;font-size:25px"
                       >{{
                         $store.state.resource.home.ourfeaturesselfstorage
                       }}</a
@@ -161,7 +161,7 @@
                   <h3 class="title">
                     <a
                       v-on:click="booknow('/service/boxstorage')"
-                      style="cursor: pointer;font-size:22px"
+                      style="cursor: pointer;font-size:25px"
                       >{{ $store.state.resource.home.ourfeaturesstoragebox }}</a
                     >
                   </h3>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="content">
                   <h3 class="title">
-                    <a href="#" style="font-size:22px">{{
+                    <a href="#" style="font-size:25px">{{
                       $store.state.resource.home.ourfeaturesmovingservice
                     }}</a>
                   </h3>
