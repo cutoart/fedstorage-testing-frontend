@@ -25,7 +25,7 @@
                   items[commentIndex - 1].image
                 "
                 class="image"
-                style="object-fit:fill"
+                style="object-fit:contain"
               />
               <div class="date">
                 <span>{{ items[commentIndex - 1].date }}</span>
@@ -133,8 +133,8 @@ export default {
 </script>
 <style scoped>
 .image {
-  height: 191px;
-  width: 370px;
+  height:50%;
+  width: 100%;
 }
 .date {
   margin-top: 14px;
@@ -163,8 +163,8 @@ export default {
 }
 @media only screen and (max-width: 992px) {
   .image[data-v-270991c0] {
-    height: 160px;
-    width: 200px;
+    height:50%;
+  width: 100%;
   }
   .title[data-v-270991c0] {
     font-size: 20px;
@@ -174,8 +174,8 @@ export default {
 
 @media only screen and (max-width: 765px) {
   .image[data-v-270991c0] {
-    height: 160px;
-    width: 350px;
+     height:50%;
+  width: 100%;
   }
   .title[data-v-270991c0] {
     font-size: 25px;
