@@ -519,7 +519,7 @@ section { padding: 50px 0px 0px; }
   background: #465ecb;
   border: 0;
   outline: 0;
-  padding: 15px 45px 15px 14px;
+  padding: 10px 30px 10px 10px;
   position: relative;
 }
 .our-feature ul li .content-wrap .content a.book-now:hover {
@@ -538,7 +538,7 @@ section { padding: 50px 0px 0px; }
   background: #ef2b37;
   border: 0;
   outline: 0;
-  padding: 15px 14px 15px 45px;
+  padding: 10px 10px 10px 45px;
   position: relative;
 }
 .our-feature ul li .content-wrap .content a.looking-better:hover {
