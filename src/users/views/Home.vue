@@ -130,23 +130,20 @@
                     {{ $store.state.resource.home.ourfeaturesselfstoragetext }}
                   </p>
                   <div class="buttons btn-book">
-                    <a
-                      class="btn btn-primary book-now"
-                      v-on:click="booknow('/service/selfstorage')"
-                      sty
-                      >{{
-                        $store.state.resource.home
-                          .ourfeaturesselfstoragebtnbooknow
-                      }}</a
-                    >
-                    <a
-                      class="btn btn-primary looking-better"
-                      v-on:click="booknow('/service/selfstorage')"
-                      >{{
-                        $store.state.resource.home
-                          .ourfeaturesselfstoragebtnlooking
-                      }}</a
-                    >
+                   <router-link
+                          class="btn btn-primary book-now"
+                          :to="'/selfstoragestores'"
+                          >{{
+                            $store.state.resource.service.selfstoragebtnbooknow
+                          }}</router-link
+                        >
+                      <router-link
+                          class="btn btn-primary looking-better"
+                          :to="'/selfstoragestores'"
+                          >{{
+                            $store.state.resource.home.ourfeaturesselfstoragebtnlooking
+                          }}</router-link
+                        > 
                   </div>
                 </div>
               </div>
