@@ -15,7 +15,7 @@
             </p>
           </div>
           <ul class="row">
-            <li class="col-md-4" v-for="(item, key) in items" :key="key">
+            <li class="col-lg-3 col-md-4 col-sm-6" v-for="(item, key) in items" :key="key">
               <div
                 class="content-wrap"
                 @click="
