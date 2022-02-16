@@ -185,10 +185,10 @@ export default {
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1170px) {
+/* @media only screen and (min-device-width: 1024px) and (max-device-width: 1170px) {
   .image {
     height: 250px;
   width: 250px;
   }
-}
+} */
 </style>
