@@ -10,7 +10,7 @@
       <section class="our-feature2">
         <div class="container">
           <div class="row background">
-            <div class="col-6 map1 form-group" style="margin-bottom: 0px">
+            <div class="col-lg-6 col-md-6 col-sm-6 map1 form-group" style="margin-bottom: 0px">
               <div
                 class="col-12"
                 style="border-radius: 15px; background-color: white"
@@ -54,7 +54,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 map form-group" style="min-height: 350px">
+            <div class="col-lg-6 col-md-6 col-sm-6 map form-group" style="min-height: 350px">
               <div
                 style="
                   border-radius: 15px;

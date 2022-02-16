@@ -12,7 +12,7 @@
       <section class="our-storage">
         <div class="container">
           <ul class="row">
-            <li id="self-store-cont" class="col-md-6">
+            <li id="self-store-cont" class="col-lg-6 col-md-6 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <video-embed :src="itemsVideo.selfstorage"></video-embed>
@@ -53,7 +53,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-md-6">
+            <li class="col-lg-6 col-md-6 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <video-embed :src="itemsVideo.boxstorage"></video-embed>
@@ -110,7 +110,7 @@
             </p>
           </div>
           <ul class="row">
-              <li id="self-store-cont" class="col-md-4">
+              <li id="self-store-cont" class="col-lg-4 col-md-4 col-sm-4">
             <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
@@ -151,7 +151,7 @@
                 </div>
               </div>
             </li>
-              <li id="self-store-cont" class="col-md-4">
+              <li id="self-store-cont" class="col-lg-4 col-md-4 col-sm-4">
             <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
@@ -189,7 +189,7 @@
                 </div>
               </div>
             </li>
-              <li id="self-store-cont" class="col-md-4">
+              <li id="self-store-cont" class="col-lg-4 col-md-4 col-sm-4">
             <!-- <li class="col-xl-4 col-lg-6 col-md-6 col-sm-12 pl-5 pr-3"> -->
               <div class="content-wrap">
                 <div class="img-content">
