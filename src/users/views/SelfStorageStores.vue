@@ -6,11 +6,30 @@
       </div>
     </div>
     <div class="row" style="margin-top: 15px">
-      <div class="col-6 scrollbar">
+
+           <div class="col form-group map">
+        <div
+          v-if="
+            setting.iframe != undefined &&
+            setting.iframe != null &&
+            setting.iframe != ''
+          "
+          class="image-map"
+        >
+          <iframe
+            :src="setting.iframe"
+            height="100%"
+            width="100%"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="col scrollbar">
         <div class="border-white">
           <div class="border-white" v-for="item in items" v-bind:key="item.id">
             <div class="container">
-              <div class="row">
+              <div class="col">
                 <div
                   class="col-12 font-weight-bold"
                   v-on:click="$router.push('/selfstorage/' + item._id)"
@@ -24,7 +43,7 @@
                   }}
                 </div>
               </div>
-              <div class="row">
+              <div class="col">
                 <div class="col-12 font-weight-normal">
                   {{ $store.state.resource.selfstoragestep2.address }}:
                  
@@ -51,7 +70,7 @@
                   ({{ item.pincode }})
                 </div>
               </div>
-              <div class="row">
+              <div class="col">
                 <div class="col-12 font-weight-normal">
                   <span class="pr-2">
                     {{ $store.state.resource.selfstoragestep2.tel }}:
@@ -81,7 +100,7 @@
                   </span>
                 </div>
               </div>
-              <div class="row">
+              <div class="col">
                 <div class="col-7 font-weight-normal">
                   <b-dropdown
                     text="Office hours:"
@@ -190,7 +209,7 @@
                   </b-dropdown>
                 </div>
               </div>
-              <div class="row">
+              <div class="col">
                 <div
                   class="col-12 font-weight-normal mt-4"
                   style="display: flex"
@@ -264,7 +283,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="col">
                 <div class="button2">
                   <router-link
                     class="btn btn-primary looking-better"
@@ -279,23 +298,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6 form-group map">
-        <div
-          v-if="
-            setting.iframe != undefined &&
-            setting.iframe != null &&
-            setting.iframe != ''
-          "
-          class="image-map"
-        >
-          <iframe
-            :src="setting.iframe"
-            height="100%"
-            width="100%"
-            frameborder="0"
-          ></iframe>
-        </div>
-      </div>
+ 
     </div>
   </div>
 </template>
@@ -363,7 +366,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  max-width: 1344px;
+  max-width: 100%;
   margin-top: 23px;
   padding-bottom: 23px;
   text-align: left;
@@ -393,7 +396,6 @@ export default {
 .border-white {
   margin-top: 15px;
   height: auto;
-  width: 640px;
   background: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 30px 0px;
@@ -511,7 +513,7 @@ a.looking-better:before {
 @media only screen and (max-width: 992px) {
   .border-white[data-v-ea8c5fe0] {
     margin-top: -18px;
-    width: 345px;
+    /* width: 345px; */
   }
   .pr-3,
   img {
@@ -519,7 +521,7 @@ a.looking-better:before {
   }
   .scrollbar[data-v-ea8c5fe0] {
     overflow: scroll;
-    max-width: 360px;
+    /* max-width: 360px; */
     margin-right: 10px;
   }
   .text-right {
@@ -534,7 +536,7 @@ a.looking-better:before {
 @media only screen and (max-width: 765px) {
   .border-white[data-v-ea8c5fe0] {
     margin-top: -15px;
-    width: 345px;
+    /* width: 345px; */
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   }
   .font-weight-bold[data-v-36655ddc] {
