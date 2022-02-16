@@ -25,7 +25,7 @@
                   items[commentIndex - 1].image
                 "
                 class="image"
-                style="object-fit:contain"
+                style="object-fit:fill"
               />
               <div class="date">
                 <span>{{ items[commentIndex - 1].date }}</span>
