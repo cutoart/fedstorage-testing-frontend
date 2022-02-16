@@ -99,7 +99,7 @@
             </li>
           </ul>
           <ul class="row">
-            <li class="col-md-3">
+            <li class="col-lg-3 col-md-4 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <img src="../assets/images/Packing.png" />
@@ -114,7 +114,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-md-3">
+            <li class="col-lg-3 col-md-4 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <img src="../assets/images/Pickup.png" />
@@ -129,7 +129,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-md-3">
+            <li class="col-lg-3 col-md-4 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <img src="../assets/images/Store.png" />
@@ -144,7 +144,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-md-3">
+            <li class="col-lg-3 col-md-4 col-sm-6">
               <div class="content-wrap">
                 <div class="img-content">
                   <img src="../assets/images/Return.png" />

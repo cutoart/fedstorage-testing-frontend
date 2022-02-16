@@ -10,9 +10,10 @@
     <div class="content" id="content">
       <div class="about-us-content" style="background: #f9f9f9">
         <div class="container">
-          <CRow sm="12" v-if="commentIndex < items.length">
+          <CRow v-if="commentIndex < items.length">
             <CCol
-              sm="4"
+             lg="3"
+              sm="6"
               md="4"
               v-for="commentIndex in commentsToShow"
               v-bind:key="commentIndex._id"
@@ -24,6 +25,7 @@
                   items[commentIndex - 1].image
                 "
                 class="image"
+                style="object-fit:fill"
               />
               <div class="date">
                 <span>{{ items[commentIndex - 1].date }}</span>
