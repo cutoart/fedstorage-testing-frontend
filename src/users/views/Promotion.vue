@@ -14,9 +14,10 @@
           <PromotionSlider />
           <br />
           <!-- slider added end -->
-          <CRow sm="12"  md="4" v-if="commentIndex < items.length">
+          <CRow v-if="commentIndex < items.length">
             <CCol
-              sm="12"
+            lg="3"
+              sm="6"
               md="4"
               v-for="commentIndex in commentsToShow"
               v-bind:key="commentIndex._id"
