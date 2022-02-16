@@ -27,7 +27,7 @@
               <div class="row">
                 <div class="col-12 font-weight-normal">
                   {{ $store.state.resource.selfstoragestep2.address }}:
-
+                 
                   {{ item.address }}, {{ item.area }},
                   {{
                     $store.state.language == "chinese"
@@ -196,75 +196,63 @@
                   style="display: flex"
                 >
                   <div
-                    class="pr-3"
-                    style="padding-top: 7px"
-                    v-if="
-                      item.facilities != undefined && item.facilities.length > 0
-                        ? item.facilities.includes('TrainConnectivity')
-                        : false
-                    "
-                  >
-                    <img
-                      src="../assets/images/downloadNew.png"
-                      height="45"
-                      width="52"
-                    />
-                  </div>
-                  <div
-                    class="pr-3"
-                    style="padding-top: 7px"
-                    v-if="
-                      item.facilities != undefined && item.facilities.length > 0
-                        ? item.facilities.includes('24Hropen')
-                        : false
-                    "
-                  >
-                    <img
-                      src="../assets/images/vector.png"
-                      height="41"
-                      width="41"
-                    />
-                  </div>
-                  <div
-                    class="pr-3"
-                    v-if="
-                      item.facilities != undefined && item.facilities.length > 0
-                        ? item.facilities.includes('Webcam')
-                        : false
-                    "
-                  >
-                    <img
-                      src="../assets/images/video-camera.png"
-                      height="56"
-                      width="52"
-                    />
-                  </div>
-                  <div
-                    class="pr-3"
-                    style="padding-top: 4px"
-                    v-if="
-                      item.facilities != undefined && item.facilities.length > 0
-                        ? item.facilities.includes('wifi')
-                        : false
-                    "
-                  >
-                    <img
-                      src="../assets/images/wifi.png"
-                      height="47"
-                      width="47"
-                    />
-                  </div>
-                  <div
-                    class="pr-3"
-                    style="padding-top: 9px"
-                    v-if="
-                      item.facilities != undefined && item.facilities.length > 0
-                        ? item.facilities.includes('weather')
-                        : false
-                    "
-                  >
-                    <img src="../assets/images/weather.png" />
-                  </div>
+                      v-if="
+                        item.facilities != undefined &&
+                        item.facilities.length > 0
+                          ? item.facilities.includes('TrainConnectivity')
+                          : false
+                      "
+                    >
+                      <img
+                        src="../assets/images/downloadNew.png"
+                        class="icon1"
+                        style="max-width:50%"
+                      />
+                    </div>
+                    <div
+                      v-if="
+                        item.facilities != undefined &&
+                        item.facilities.length > 0
+                          ? item.facilities.includes('24Hropen')
+                          : false
+                      "
+                    >
+                      <img src="../assets/images/vector.png" class="icon"  style="max-width:50%"/>
+                    </div>
+                    <div
+                      v-if="
+                        item.facilities != undefined &&
+                        item.facilities.length > 0
+                          ? item.facilities.includes('Webcam')
+                          : false
+                      "
+                    >
+                      <img
+                        src="../assets/images/video-camera.png"
+                        class="icon"
+                        style="max-width:50%"
+                      />
+                    </div>
+                    <div
+                      v-if="
+                        item.facilities != undefined &&
+                        item.facilities.length > 0
+                          ? item.facilities.includes('wifi')
+                          : false
+                      "
+                    >
+                      <img src="../assets/images/wifi.png" class="icon"  style="max-width:50%"/>
+                    </div>
+                    <div
+                      v-if="
+                        item.facilities != undefined &&
+                        item.facilities.length > 0
+                          ? item.facilities.includes('weather')
+                          : false
+                      "
+                    >
+                      <img src="../assets/images/weather.png" class="icon"  style="max-width:50%"/>
+                    </div>
                   <div class="text-right pt-2">
                     <router-link
                       class="btn btn-primary looking-better"
