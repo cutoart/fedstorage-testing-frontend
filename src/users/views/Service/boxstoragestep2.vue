@@ -33,7 +33,6 @@
                 v-model="item.value"
                 :min="0"
                 :max="30"
-                inline
                 size="small"
                 center
                 controls
@@ -562,6 +561,10 @@ body {
   .addcart-mobile container row {
     display: block;
     border-bottom-right-radius: 25px;
+  }
+
+  #addCart{
+ text-align: right;
   }
 
      #addCart .number-input__button--minus {
