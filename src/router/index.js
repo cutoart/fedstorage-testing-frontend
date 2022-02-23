@@ -34,12 +34,12 @@ const Banner = () =>
     import('@/admin/views/Banner/AddBanner')
 const BannerList = () =>
     import('@/admin/views/Banner/ListBanner')
-    //bannerWeb
+//bannerWeb
 const BannerWeb = () =>
     import('@/admin/views/BannerWeb/AddBanner')
 const BannerWebList = () =>
     import('@/admin/views/BannerWeb/ListBanner')
-    //end bannerWeb
+//end bannerWeb
 const RegisterUserList = () =>
     import('@/admin/views/RegisterUser/RegisterUserList')
 const RegisterUser = () =>
@@ -76,6 +76,12 @@ const Boxstore = () =>
     import('@/admin/views/BoxStore/Boxstore')
 const BoxstoreList = () =>
     import('@/admin/views/BoxStore/BoxstoreList')
+    // MovingService
+    const MovingService = () =>
+    import('@/admin/views/MovingService/MovingService')
+const MovingServiceList = () =>
+    import('@/admin/views/MovingService/MovingServiceList')
+    //end MovingService
 const CountryList = () =>
     import('@/admin/views/Country/CountryList')
 const Country = () =>
@@ -294,7 +300,7 @@ function configRoutes() {
                     requiresAuth: true
                 },
             },
-             //end bannerWeb
+            //end bannerWeb
             {
                 path: '/admin/faqlist',
                 name: 'FAQs',
@@ -487,6 +493,32 @@ function configRoutes() {
                     requiresAuth: true
                 },
             },
+            // MovingService
+            {
+                path: '/admin/movingservicelist',
+                name: 'MovingServiceList',
+                component: MovingServiceList,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
+                path: '/admin/editMovingService/:id',
+                name: 'EditMovingService',
+                component: MovingService,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
+                path: '/admin/addMovingService',
+                name: 'AddMovingService',
+                component: MovingService,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            //end MovingService
             {
                 path: '/admin/addboxstore',
                 name: 'AddBoxstore',

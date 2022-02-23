@@ -27,6 +27,13 @@ export default [
             name: "Box Store ",
             to: { name: "BoxstoreList" },
           },
+          // MovingService
+          {
+            _name: "CSidebarNavItem",
+            name: "Moving Service ",
+            to: { name: "MovingServiceList" },
+          },
+          //end MovingService
         ],
       },
       {
