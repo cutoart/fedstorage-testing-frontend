@@ -34,6 +34,15 @@ export default [
             to: { name: "MovingServiceList" },
           },
           //end MovingService
+
+           // MovingServiceApplication
+           {
+            _name: "CSidebarNavItem",
+            name: "Moving Service Application",
+            to: { name: "MovingServiceApplicationList" },
+          },
+          //end MovingService
+
         ],
       },
       {

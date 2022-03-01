@@ -204,7 +204,7 @@
                     }}
                   </p>
                   <div class="buttons btn-book">
-                    <a class="btn btn-primary book-now" href="#">{{
+                    <a class="btn btn-primary book-now" v-on:click="$router.push('/movingservicestep2')">{{
                       $store.state.resource.home
                         .ourfeaturesmovingservicebtnbooknow
                     }}</a>

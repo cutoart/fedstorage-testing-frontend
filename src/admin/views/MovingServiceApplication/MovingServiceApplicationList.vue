@@ -4,11 +4,11 @@
       <CCardHeader>
         <CRow>
           <CCol>
-            <strong>Moving Service</strong>
+            <strong>Moving Service Application</strong>
           </CCol>
           <CCol col="2">
-            <CButton block router-link :to="{ name: 'AddMovingService' }" color="dark"
-              >Add Moving Service</CButton
+            <CButton block router-link :to="{ name: 'AddMovingServiceApplication' }" color="dark"
+              >Add Moving Service Application</CButton
             >
           </CCol>
         </CRow>
@@ -50,7 +50,7 @@
                 >
                   <CDropdownItem
                     :to="{
-                      name: 'EditMovingService',
+                      name: 'EditMovingServiceApplication',
                       params: { id: item._id },
                     }"
                     >Edit</CDropdownItem
@@ -82,17 +82,11 @@
 import APIService from "@/services/api.service.js";
 import Store from "@/store/index";
 export default {
-  name: "MovingService",
+  name: "MovingServiceApplication",
   data() {
     return {
       item: [],
       fields: [
-        {
-          key: "size",
-          label: "size",
-          sortable: true,
-          sortDirection: "asc",
-        },
         {
           key: "area",
           label: "area",
@@ -100,8 +94,20 @@ export default {
           sortDirection: "asc",
         },
         {
-          key: "price",
-          label: "price",
+          key: "name",
+          label: "name",
+          sortable: true,
+          sortDirection: "asc",
+        },
+        {
+          key: "phone",
+          label: "phone",
+          sortable: true,
+          sortDirection: "asc",
+        },
+          {
+          key: "email",
+          label: "email",
           sortable: true,
           sortDirection: "asc",
         },
@@ -118,13 +124,13 @@ export default {
   },
   created() {
     Store.commit("showLoader");
-    document.title = this.$store.state.projecttitle + " - Moving Service";
+    document.title = this.$store.state.projecttitle + " - Moving Service Application";
     this.getMovingServiceListData();
   },
   methods: {
     getMovingServiceListData() {
       APIService.post(
-        "/movingservicelist",
+        "/movingServiceApplicationList",
         this.$store.state.userInfo.userType == "Users"
       ).then((response) => {
         Store.commit("hideLoader");
@@ -148,7 +154,7 @@ export default {
         },
         callback: (confirm) => {
           if (confirm) {
-            APIService.delete("/DeActivateMovingService", req).then((response) => {
+            APIService.delete("/DeActivateMovingServiceApplication", req).then((response) => {
               this.$set(this, "item", response.data);
             });
           }
@@ -168,7 +174,7 @@ export default {
         },
         callback: (confirm) => {
           if (confirm) {
-            APIService.delete("/DeleteMovingService", req).then((response) => {
+            APIService.delete("/DeleteMovingServiceApplication", req).then((response) => {
               this.$set(this, "item", response.data);
             });
           }

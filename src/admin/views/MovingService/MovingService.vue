@@ -13,8 +13,8 @@
                 <CInput
                   label="Moving Service Size*"
                   placeholder="Enter Size"
-                  :isValid="checkIfValid('Size')"
-                  :value.sync="$v.user.Size.$model"
+                  :isValid="checkIfValid('size')"
+                  :value.sync="$v.user.size.$model"
                   :maxlength="99"
                   invalidFeedback="Size is Required"
                 />
@@ -23,8 +23,8 @@
                 <CInput
                   label="Moving Service Area*"
                   placeholder="Enter Area"
-                  :isValid="checkIfValid('Area')"
-                  :value.sync="$v.user.Area.$model"
+                  :isValid="checkIfValid('area')"
+                  :value.sync="$v.user.area.$model"
                   :maxlength="99"
                   invalidFeedback="Area is Required"
                 />
@@ -33,8 +33,8 @@
                 <CInput
                   label="Price*"
                   placeholder="Enter Price"
-                  :isValid="checkIfValid('Price')"
-                  :value.sync="$v.user.Price.$model"
+                  :isValid="checkIfValid('price')"
+                  :value.sync="$v.user.price.$model"
                   :maxlength="99"
                   invalidFeedback="Price is Required"
                 />
@@ -81,18 +81,18 @@ export default {
     return {
       id: this.$route.params.id,
       user: {
-        Size: "",
-        Area: "",
-        Price: "",
+        size: "",
+        area: "",
+        price: "",
         createdBy: this.$store.state.userInfo.userId,
       },
     };
   },
   validations: {
     user: {
-      Size: { required },
-      Area: { required },
-      Price: { required },
+      size: { required },
+      area: { required },
+      price: { required },
     },
   },
   methods: {

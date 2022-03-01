@@ -82,6 +82,14 @@ const BoxstoreList = () =>
 const MovingServiceList = () =>
     import('@/admin/views/MovingService/MovingServiceList')
     //end MovingService
+
+    // MovingServiceApplication
+    const MovingServiceApplication = () =>
+    import('@/admin/views/MovingServiceApplication/MovingServiceApplication')
+const MovingServiceApplicationList = () =>
+    import('@/admin/views/MovingServiceApplication/MovingServiceApplicationList')
+    //end MovingServiceApplication
+
 const CountryList = () =>
     import('@/admin/views/Country/CountryList')
 const Country = () =>
@@ -133,6 +141,10 @@ const BoxStorage = () =>
     import('@/users/views/BoxStorage')
 const Service = () =>
     import('@/users/views/Service/Service')
+    // MovingServiceStep2
+    const MovingServiceStep2 = () =>
+    import('@/users/views/Service/movingservicestep2')
+    // MovingServiceStep2
 const SelfStorage = () =>
     import('@/users/views/SelfStorage')
 const SelfStorageStoredetail = () =>
@@ -519,6 +531,33 @@ function configRoutes() {
                 },
             },
             //end MovingService
+
+            // MovingServiceApplication
+            {
+                path: '/admin/movingServiceApplicationList',
+                name: 'MovingServiceApplicationList',
+                component: MovingServiceApplicationList,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
+                path: '/admin/editMovingServiceApplication/:id',
+                name: 'EditMovingServiceApplication',
+                component: MovingServiceApplication,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
+                path: '/admin/addMovingServiceApplication',
+                name: 'AddMovingServiceApplication',
+                component: MovingServiceApplication,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            //end MovingServiceApplication
             {
                 path: '/admin/addboxstore',
                 name: 'AddBoxstore',
@@ -675,6 +714,13 @@ function configRoutes() {
             name: 'Home',
             component: Home,
         },
+        // movingservicestep2
+        {
+            path: '/movingservicestep2',
+            name: 'Moving Service',
+            component: MovingServiceStep2,
+        },
+        // movingservicestep2
         {
             path: '/changepassword/:id?',
             name: 'Change Password',
