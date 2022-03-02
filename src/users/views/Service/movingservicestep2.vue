@@ -1,190 +1,134 @@
 <template>
   <div>
-        <div class="container">
-       <div class="row">
-         
-         <div class="col-lg-4 col-md-6 col-sm-6"> 
-           <div class="content-wrap">
-                <div class="img-content">
-           <img src="../../assets/images/movingservice/move1.jpg" max-width="300px"  max-height="300px"   style="object-fit: contain" />
-           </div>
-         </div>
-         </div>
-          <div class="col-lg-4 col-md-6 col-sm-6"> 
-            <div class="content-wrap">
-                <div class="img-content">
-                  <img src="../../assets/images/movingservice/move2.jpg" max-width="300px"  max-height="300px"  style="object-fit: contain" />
-                    </div>
-         </div>
-         </div>
-          
-             <div class="col-lg-4 col-md-6 col-sm-6"> 
-            <div class="content-wrap">
-                <div class="img-content">
-              <img src="../../assets/images/movingservice/move3.jpg" max-width="300px"  max-height="300px" style="object-fit: contain" /></div>
-             </div>
-             </div>
-             </div>
-            </div>
+    <div class="container">
+      <br><br>
+     <ul class="steps">
+      <li
+        v-for="tab in tabs"
+        :class="{ 'is-active': tab.selected }"
+        v-bind:key="tab.name"
+      >
 
-                <div class="container  justify-content-center">
-       <div class="row">
-
-         <div class="col-lg-3 col-md-4 col-sm-6"> 
-            <div class="content-wrap">
-                <div class="img-content">
-              <img src="../../assets/images/movingservice/move4.png" class="image" />
-             </div>
-             </div>
-         </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6"> 
-             <div class="content-wrap">
-                <div class="img-content">
-              <img src="../../assets/images/movingservice/move5.png" class="image"/>
-             </div>
-             </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-sm-6">  
-             <div class="content-wrap">
-                <div class="img-content">
-              <img src="../../assets/images/movingservice/move6.png" class="image" />
-             </div>
-             </div>
-             </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6"> 
-               <div class="content-wrap">
-                <div class="img-content">
-              <img src="../../assets/images/movingservice/move7.png" class="image" />
-             </div>
-             </div>
-            </div>
-            
-            </div>
-       </div>
-<div class="container form">
-               <table class="table table-striped ">
-              <thead>
-                <tr>
-                  <th>Size</th> 
-                    <th>Area</th>
-                    <th>Price</th>
-                    </tr>
-              </thead>
-            <tbody>
-               <tr  v-for="(item, index) in items"
-                  v-bind:key="index">
-                  <td>{{item.size}}</td>
-                   <td>{{item.area}}</td>
-                    <td>{{item.price}}</td>
-                   </tr>
-               
-                
-              </tbody>
-            </table>
+     
+        <div class="steps-content">
+          <p class="is-size-4">{{ tab.name }}</p>
+          <p class="digi">{{ tab.info }}</p>
         </div>
 
-         <form @submit.prevent="handleSubmit">
-           <div class="container form">
-<div class="row border-dark">
-     <div
-                  class="sectoin-title ml-3"
-                  style="
-                    float: left;
-                    font-size: 24px;
-                    font-weight: 400 !important;
-                    margin-top :10px;
-                  "
-                >
-                  <strong>Moving Application</strong>
-                </div>
-  <div class="col-12 mt-3 form-group">
-   <input  class="form-control" type="text" v-model="moving.area" placeholder="Area">
-    </div>
-    
-     <div class="col-12 mt-3 form-group">
-    <input  class="form-control"  type="text" v-model="moving.name" placeholder="Name">
-     </div>
+      </li>
+    </ul>
+     <br><br>
+    </div> 
 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move1.jpg"
+            class="image1"
+          />
+        </div>
 
-      <div class="col-12 mt-3 form-group">
-   <input  class="form-control" type="text" v-model="moving.phone" placeholder="WhatsApp Number">
-  </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move2.jpg"
+            class="image1"
+          />
+        </div>
 
-      <div class="col-12 mt-3 form-group">
-    <input  class="form-control" type="email" v-model="moving.email" placeholder="Email">
-     </div>
-
-     <div class="col-12 mt-3 form-group">
-    <button type="submit"  class="col-12 btn btn-send">Submit</button>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move3.jpg"
+            class="image1"
+          />
+        </div>
       </div>
+    </div>
+<br><br><br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move4.png"
+            class="image1"
+          />
+        </div>
 
-</div>
-</div>
-  </form>
-      </div> 
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move5.png"
+            class="image1"
+          />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move6.png"
+            class="image1"
+          />
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img
+            src="../../assets/images/movingservice/move7.png"
+            class="image1"
+          />
+        </div>
+      </div>
+        <br><br>
+      <div class="btnNextDiv">
+       <router-link :to="'/movingservicestep2b'" class="col-5 btn btn-next">Next</router-link>
+       </div>
+    </div>
+   
+    <br><br><br><br>
+    </div>
+ 
 </template>
 
 <script>
-import APIService from "@/services/api.service.js";
 
 export default {
-  name: "MovingService",
 data(){
-  return {
-    items: {},
-      moving: {
-        area: '',
-        name: '',
-        phone: '',
-        email: '',
-      },   
-};
-},
-  created() {
-    APIService.post("/movingservicestep2", { usertype: "user" }, null).then(
-      (response) => {
-        this.$set(this, "items", response.data);
-      }
-    );
-  },
-
-  methods:{
-    handleSubmit() {
-      // this.$v.user.$touch();
-      // if (this.$v.user.$invalid) {
-      //   return;
-      // }
-      this.submitted = true;
-      // this.user.apiurl = this.$store.state.apiURL;
-      APIService.post("/moving-service-application",this.moving).then(() => {
-        this.$successAlert("Apply Moving Service Successfully !.");
-        this.$router.go();
-        this.submitted = false;
-      });
-      this.submitted = true;
-    },
-
+  return{
+     tabs: [
+        // {
+        //   name: "Step 1",
+        //   info: "Select",
+        //   selected: false,
+        // },
+        {
+          name: "Step 2-A",
+          info: "Book",
+          selected: true,
+        },
+        // {
+        //   name: "Step 3",
+        //   info: "Payment",
+        //   selected: false,
+        // },
+      ],
   }
 }
+};
 </script>
 
-<style lang="scss" scoped>
-.img-content{
+ <style lang="scss">
+.is-active .steps-content p {
+  color: #4B5FC4 !important;
+}
+.steps-content p {
+  color: #8fa7b3;
+}
+</style>
+
+<style scoped>
+.img-content {
   width: 250px;
-  // height: 250px;
+  text-align: center;
 }
-.form{
-  max-width: 700px;
-}
-.border-dark {
-  border: 3px solid #dee2e6 !important;
-}
-.container{
-  padding-bottom: 50px;
-}
-.btn-send {
+
+.btn-next {
   background: #14b7eb;
   border-radius: 0px 0px 20px 0px;
   color: #ffffff;
@@ -192,19 +136,47 @@ data(){
 </style>
 
 <style>
+.btnNextDiv{
+  text-align: end;
+}
 .image {
-  height:50%;
+  height: 50%;
   width: 100%;
 }
-.container{
-  text-align: center;
+.image1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
 }
 
-
-
-@media only screen and (max-width: 992px) {
+.is-size-4 {
+  font-size: 35px !important;
+  margin: 8px !important;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
+.digi {
+  font-size: 14px !important;
+  margin: 20px !important;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
 }
+
+            ul li {
+                display: block;
+                /* position: relative; */
+                /* float: left; */
+                text-align: center;
+            }
+
+        
+
+
+
+
 </style>

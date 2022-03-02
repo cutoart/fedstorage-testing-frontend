@@ -144,6 +144,9 @@ const Service = () =>
     // MovingServiceStep2
     const MovingServiceStep2 = () =>
     import('@/users/views/Service/movingservicestep2')
+
+    const MovingServiceStep2b = () =>
+    import('@/users/views/Service/movingservicestep2b')
     // MovingServiceStep2
 const SelfStorage = () =>
     import('@/users/views/SelfStorage')
@@ -717,8 +720,14 @@ function configRoutes() {
         // movingservicestep2
         {
             path: '/movingservicestep2',
-            name: 'Moving Service',
+            name: 'Moving Service 2a',
             component: MovingServiceStep2,
+        },
+
+        {
+            path: '/movingservicestep2b',
+            name: 'Moving Service 2b',
+            component: MovingServiceStep2b,
         },
         // movingservicestep2
         {
