@@ -1,44 +1,41 @@
 <template>
   <div>
-     <div class="container">
-      <br><br>
-     <ul class="steps">
-      <li
-        v-for="tab in tabs"
-        :class="{ 'is-active': tab.selected }"
-        v-bind:key="tab.name"
-      >
-
-     
-        <div class="steps-content">
-          <p class="is-size-4">{{ tab.name }}</p>
-          <p class="digi">{{ tab.info }}</p>
-        </div>
-
-      </li>
-    </ul>
-     <br><br>
-    </div> 
-<br>
+    <div class="container">
+      <br /><br />
+      <ul class="steps">
+        <li
+          v-for="tab in tabs"
+          :class="{ 'is-active': tab.selected }"
+          v-bind:key="tab.name"
+        >
+          <div class="steps-content">
+            <p class="is-size-4">{{ tab.name }}</p>
+            <p class="digi">{{ tab.info }}</p>
+          </div>
+        </li>
+      </ul>
+      <br /><br />
+    </div>
+    <br />
     <div class="container form">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Size</th>
-            <th>Area</th>
+            <th>Area(Feet)</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(item, index) in items" v-bind:key="index">
             <td>{{ item.size }}</td>
-            <td>{{ item.area }}</td>
+            <td>{{ item.areaFrom }} > {{ item.areaTo }}</td>
             <td>{{ item.price }}</td>
           </tr>
         </tbody>
       </table>
     </div>
-<br>
+    <br />
     <form @submit.prevent="handleSubmit">
       <div class="container form">
         <div class="row border-dark">
@@ -58,10 +55,21 @@
               class="form-control"
               type="text"
               v-model="moving.area"
+              @change="estimatePrice"
               placeholder="Area"
+              
+            />
+
+             <input
+              class="form-control"
+              type="text"
+              v-model="estimatedPrice"
+              placeholder="Estimated Price (HKD) "
+              :readonly="true"
             />
           </div>
-
+          
+        
           <div class="col-12 mt-3 form-group">
             <input
               class="form-control"
@@ -93,7 +101,7 @@
             <button type="submit" class="col-12 btn btn-send">Submit</button>
           </div>
         </div>
-        <br><br><br><br>
+        <br /><br /><br /><br />
       </div>
     </form>
   </div>
@@ -113,8 +121,9 @@ export default {
         phone: "",
         email: "",
       },
+      estimatedPrice:"",
 
-       tabs: [
+      tabs: [
         // {
         //   name: "Step 1",
         //   info: "Select",
@@ -156,14 +165,35 @@ export default {
       });
       this.submitted = true;
     },
+
+    estimatePrice(){
+      if(this.moving.area == ""){
+        this.estimatedPrice = "Estimated Price (HKD) ";
+      }else if(this.moving.area <= 10){
+        this.estimatedPrice = 600;
+      }else if(this.moving.area <= 20){
+      this.estimatedPrice = 800;
+      }else if(this.moving.area <= 30){
+      this.estimatedPrice = 1000;
+      }else if(this.moving.area <= 40){
+      this.estimatedPrice = 1200;
+      }else if(this.moving.area <= 50){
+      this.estimatedPrice = 1500;
+      }else if(this.moving.area <= 60){
+      this.estimatedPrice = 1800;
+      }else if(this.moving.area <= 1000000){
+      this.estimatedPrice = "Quotation Required!";}
+      else{
+      this.estimatedPrice = "Please enter valid area in number format !";
+      }
+    }
   },
 };
 </script>
 
 <style lang="scss">
-
 .is-active .steps-content p {
-  color: #4B5FC4 !important;
+  color: #4b5fc4 !important;
 }
 .steps-content p {
   color: #8fa7b3;
@@ -186,7 +216,6 @@ export default {
 </style>
 
 <style>
-
 .image {
   height: 50%;
   width: 100%;
@@ -214,11 +243,10 @@ export default {
   line-height: 16px;
 }
 
-            ul li {
-                display: block;
-                /* position: relative; */
-                /* float: left; */
-                text-align: center;
-            }
-
+ul li {
+  display: block;
+  /* position: relative; */
+  /* float: left; */
+  text-align: center;
+}
 </style>

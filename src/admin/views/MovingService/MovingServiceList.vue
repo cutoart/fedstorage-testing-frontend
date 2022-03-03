@@ -94,8 +94,14 @@ export default {
           sortDirection: "asc",
         },
         {
-          key: "area",
-          label: "area",
+          key: "areaFrom",
+          label: "area from (Feet)",
+          sortable: true,
+          sortDirection: "asc",
+        },
+         {
+          key: "areaTo",
+          label: "area to (Feet)",
           sortable: true,
           sortDirection: "asc",
         },

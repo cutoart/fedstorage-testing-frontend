@@ -1,24 +1,21 @@
 <template>
   <div>
     <div class="container">
-      <br><br>
-     <ul class="steps">
-      <li
-        v-for="tab in tabs"
-        :class="{ 'is-active': tab.selected }"
-        v-bind:key="tab.name"
-      >
-
-     
-        <div class="steps-content">
-          <p class="is-size-4">{{ tab.name }}</p>
-          <p class="digi">{{ tab.info }}</p>
-        </div>
-
-      </li>
-    </ul>
-     <br><br>
-    </div> 
+      <br /><br />
+      <ul class="steps">
+        <li
+          v-for="tab in tabs"
+          :class="{ 'is-active': tab.selected }"
+          v-bind:key="tab.name"
+        >
+          <div class="steps-content">
+            <p class="is-size-4">{{ tab.name }}</p>
+            <p class="digi">{{ tab.info }}</p>
+          </div>
+        </li>
+      </ul>
+      <br /><br />
+    </div>
 
     <div class="container">
       <div class="row">
@@ -27,6 +24,14 @@
             src="../../assets/images/movingservice/move1.jpg"
             class="image1"
           />
+          <div class="content">
+                  <h3 class="head">
+                    {{ $store.state.resource.movingservice.step1 }}
+                  </h3>
+                  <p class="head-small">
+                    {{ $store.state.resource.movingservice.step1text }}
+                  </p>
+                </div>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6">
@@ -34,6 +39,14 @@
             src="../../assets/images/movingservice/move2.jpg"
             class="image1"
           />
+          <div class="content">
+                  <h3 class="head">
+                    {{ $store.state.resource.movingservice.step2 }}
+                  </h3>
+                  <p class="head-small">
+                    {{ $store.state.resource.movingservice.step2text }}
+                  </p>
+                </div>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-6">
@@ -41,10 +54,18 @@
             src="../../assets/images/movingservice/move3.jpg"
             class="image1"
           />
+          <div class="content">
+                  <h3 class="head">
+                    {{ $store.state.resource.movingservice.step3 }}
+                  </h3>
+                  <p class="head-small">
+                    {{ $store.state.resource.movingservice.step3text }}
+                  </p>
+                </div>
         </div>
       </div>
     </div>
-<br><br><br><br>
+    <br /><br /><br /><br />
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6">
@@ -75,23 +96,24 @@
           />
         </div>
       </div>
-        <br><br>
+      <br /><br />
       <div class="btnNextDiv">
-       <router-link :to="'/movingservicestep2b'" class="col-5 btn btn-next">Next</router-link>
-       </div>
+        <router-link :to="'/movingservicestep2b'" class="col-5 btn btn-next"
+          >Next</router-link
+        >
+      </div>
     </div>
-   
-    <br><br><br><br>
-    </div>
- 
+
+    <br /><br /><br /><br />
+  </div>
 </template>
 
 <script>
 
 export default {
-data(){
-  return{
-     tabs: [
+  data() {
+    return {
+      tabs: [
         // {
         //   name: "Step 1",
         //   info: "Select",
@@ -108,14 +130,14 @@ data(){
         //   selected: false,
         // },
       ],
-  }
-}
+    };
+  },
 };
 </script>
 
  <style lang="scss">
 .is-active .steps-content p {
-  color: #4B5FC4 !important;
+  color: #4b5fc4 !important;
 }
 .steps-content p {
   color: #8fa7b3;
@@ -136,7 +158,7 @@ data(){
 </style>
 
 <style>
-.btnNextDiv{
+.btnNextDiv {
   text-align: end;
 }
 .image {
@@ -167,16 +189,23 @@ data(){
   line-height: 16px;
 }
 
-            ul li {
-                display: block;
-                /* position: relative; */
-                /* float: left; */
-                text-align: center;
-            }
+ul li {
+  display: block;
+  /* position: relative; */
+  /* float: left; */
+  text-align: center;
+}
 
-        
-
-
-
-
+.head {
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #4d5681;
+}
+.head-small {
+  font-size: 15px !important;
+  line-height: 135.94% !important;
+  text-align: center !important;
+  color: #000000 !important;
+}
 </style>

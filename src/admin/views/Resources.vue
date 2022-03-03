@@ -493,6 +493,53 @@
                   </CCollapse>
                 </div>
               </CCard>
+
+              <CCard class="mb-0">
+                <CButton
+                  block
+                  color="link"
+                  class="text-left shadow-none card-header"
+                  @click="accordion = accordion === 4.5 ? false : 4.5"
+                >
+                  <h5 class="m-0">Moving Service</h5>
+                </CButton>
+                <div v-if="resources != null">
+                  <CCollapse :show="accordion === 4.5">
+                    <CCardBody>
+                      <CRow>
+                        <CCol sm="6">
+                          <label>Step 1 Title</label>
+                          <CInput v-model="resources.movingservice.step1" />
+                        </CCol>
+                        <CCol sm="6">
+                          <label>Step 1 Text</label>
+                          <CInput
+                            v-model="resources.movingservice.step1text" />
+                        </CCol>
+                        <CCol sm="6">
+                          <label>Step 2 Title</label>
+                          <CInput
+                            v-model="resources.movingservice.step2" />
+                        </CCol>
+                        <CCol sm="6">
+                          <label>Step 2 Text</label>
+                          <CInput v-model="resources.movingservice.step2text" />
+                        </CCol>
+                        <CCol sm="6">
+                          <label>Step 3 Title</label>
+                          <CInput v-model="resources.movingservice.step3" />
+                        </CCol>
+                        <CCol sm="6">
+                          <label>Step 3 Text</label>
+                          <CInput v-model="resources.movingservice.step3text" />
+                        </CCol>
+                      
+                      </CRow>
+                    </CCardBody>
+                  </CCollapse>
+                </div>
+              </CCard>
+
               <CCard class="mb-0">
                 <CButton
                   block

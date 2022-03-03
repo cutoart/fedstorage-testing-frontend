@@ -11,22 +11,32 @@
             <CRow>
               <CCol sm="6">
                 <CInput
+                  label="Moving Service Area From (Feet)*"
+                  placeholder="Enter Area From (Feet)"
+                  :isValid="checkIfValid('areaFrom')"
+                  :value.sync="$v.user.areaFrom.$model"
+                  :maxlength="99"
+                  invalidFeedback="Area From is Required"
+                />
+              </CCol>
+                <CCol sm="6">
+                <CInput
+                  label="Moving Service Area To (Feet)*"
+                  placeholder="Enter Area To (Feet)"
+                  :isValid="checkIfValid('areaTo')"
+                  :value.sync="$v.user.areaTo.$model"
+                  :maxlength="99"
+                  invalidFeedback="Area To is Required"
+                />
+              </CCol>
+              <CCol sm="6">
+                <CInput
                   label="Moving Service Size*"
                   placeholder="Enter Size"
                   :isValid="checkIfValid('size')"
                   :value.sync="$v.user.size.$model"
                   :maxlength="99"
                   invalidFeedback="Size is Required"
-                />
-              </CCol>
-              <CCol sm="6">
-                <CInput
-                  label="Moving Service Area*"
-                  placeholder="Enter Area"
-                  :isValid="checkIfValid('area')"
-                  :value.sync="$v.user.area.$model"
-                  :maxlength="99"
-                  invalidFeedback="Area is Required"
                 />
               </CCol>
               <CCol sm="6">
@@ -82,7 +92,8 @@ export default {
       id: this.$route.params.id,
       user: {
         size: "",
-        area: "",
+        areaFrom: "",
+        areaTo: "",
         price: "",
         createdBy: this.$store.state.userInfo.userId,
       },
@@ -91,7 +102,8 @@ export default {
   validations: {
     user: {
       size: { required },
-      area: { required },
+      areaFrom: { required },
+      areaTo: { required },
       price: { required },
     },
   },
