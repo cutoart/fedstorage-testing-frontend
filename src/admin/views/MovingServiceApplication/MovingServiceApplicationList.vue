@@ -94,6 +94,12 @@ export default {
           sortDirection: "asc",
         },
         {
+          key: "estimatedPrice",
+          label: "estimated price",
+          sortable: true,
+          sortDirection: "asc",
+        },
+        {
           key: "name",
           label: "name",
           sortable: true,

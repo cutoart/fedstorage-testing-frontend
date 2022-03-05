@@ -53,19 +53,27 @@
           <div class="col-12 mt-3 form-group">
             <input
               class="form-control"
-              type="text"
+              type="number"
               v-model="moving.area"
               @change="estimatePrice"
               placeholder="Area"
+              required
               
             />
 
              <input
               class="form-control"
               type="text"
-              v-model="estimatedPrice"
+              v-model="estimatedPriceInWords"
               placeholder="Estimated Price (HKD) "
               :readonly="true"
+            />
+             <input
+              class="form-control"
+              type="text"
+              v-model="this.moving.estimatedPrice"
+              placeholder="Estimated Price (HKD) "
+              :hidden="true"
             />
           </div>
           
@@ -76,15 +84,17 @@
               type="text"
               v-model="moving.name"
               placeholder="Name"
+              required
             />
           </div>
 
           <div class="col-12 mt-3 form-group">
             <input
               class="form-control"
-              type="text"
+              type="number"
               v-model="moving.phone"
               placeholder="WhatsApp Number"
+              required
             />
           </div>
 
@@ -120,8 +130,10 @@ export default {
         name: "",
         phone: "",
         email: "",
+        estimatedPrice:"",
       },
-      estimatedPrice:"",
+        estimatedPriceInWords:"",
+        estimatedPrice:"",
 
       tabs: [
         // {
@@ -147,6 +159,7 @@ export default {
       (response) => {
         this.$set(this, "items", response.data);
       }
+     
     );
   },
 
@@ -167,25 +180,21 @@ export default {
     },
 
     estimatePrice(){
-      if(this.moving.area == ""){
-        this.estimatedPrice = "Estimated Price (HKD) ";
-      }else if(this.moving.area <= 10){
-        this.estimatedPrice = 600;
-      }else if(this.moving.area <= 20){
-      this.estimatedPrice = 800;
-      }else if(this.moving.area <= 30){
-      this.estimatedPrice = 1000;
-      }else if(this.moving.area <= 40){
-      this.estimatedPrice = 1200;
-      }else if(this.moving.area <= 50){
-      this.estimatedPrice = 1500;
-      }else if(this.moving.area <= 60){
-      this.estimatedPrice = 1800;
-      }else if(this.moving.area <= 1000000){
-      this.estimatedPrice = "Quotation Required!";}
-      else{
-      this.estimatedPrice = "Please enter valid area in number format !";
+
+      for(let i=0;i<this.items.length;i++){
+      
+      if(this.moving.area >=this.items[i].areaFrom && this.moving.area<=this.items[i].areaTo){
+          // this.estimatedPrice =this.items[i].price;
+          this.estimatedPriceInWords = "Estimated Price (HKD) : "+ this.items[i].price;
+           this.estimatedPrice = this.items[i].price;
+          this.moving.estimatedPrice =this.items[i].price;
+           break
+      }else{
+        this.estimatedPrice ="Plese enter Area(feet) in number format !";
+      
       }
+        }
+       
     }
   },
 };

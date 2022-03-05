@@ -21,6 +21,16 @@
               </CCol>
               <CCol sm="6">
                 <CInput
+                  label="Estimated Price*"
+                  placeholder="Enter Estimated Price"
+                  :isValid="checkIfValid('estimatedPrice')"
+                  :value.sync="$v.user.estimatedPrice.$model"
+                  :maxlength="99"
+                  invalidFeedback="Estimated Price is Required"
+                />
+              </CCol>
+              <CCol sm="6">
+                <CInput
                   label="Name*"
                   placeholder="Enter Name"
                   :isValid="checkIfValid('name')"
@@ -94,6 +104,7 @@ export default {
       id: this.$route.params.id,
       user: {
         area: "",
+        estimatedPrice: "",
         name: "",
         phone: "",
         email: "",
@@ -104,6 +115,7 @@ export default {
   validations: {
     user: {
       area: { required },
+      estimatedPrice: { required },
       name: { required },
       phone: { required },
       email: { required },
