@@ -53,14 +53,11 @@
           <div class="col-12 mt-3 form-group">
             <input
               class="form-control"
-              type="number"
+              type="text"
               v-model="moving.area"
               @change="estimatePrice"
               placeholder="Area"
-              required
-              
             />
-
              <input
               class="form-control"
               type="text"
@@ -74,6 +71,7 @@
               v-model="this.moving.estimatedPrice"
               placeholder="Estimated Price (HKD) "
               :hidden="true"
+               :readonly="true"
             />
           </div>
           
@@ -182,7 +180,7 @@ export default {
     estimatePrice(){
 
       for(let i=0;i<this.items.length;i++){
-      
+     
       if(this.moving.area >=this.items[i].areaFrom && this.moving.area<=this.items[i].areaTo){
           // this.estimatedPrice =this.items[i].price;
           this.estimatedPriceInWords = "Estimated Price (HKD) : "+ this.items[i].price;
@@ -190,7 +188,9 @@ export default {
           this.moving.estimatedPrice =this.items[i].price;
            break
       }else{
-        this.estimatedPrice ="Plese enter Area(feet) in number format !";
+        this.estimatedPriceInWords ="Plese enter Area(feet) in number format !";
+         this.estimatedPrice ="invalid number";
+         this.moving.estimatedPrice ="invalid number";
       
       }
         }

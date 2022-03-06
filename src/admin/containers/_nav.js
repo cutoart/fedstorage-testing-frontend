@@ -154,12 +154,21 @@ export default [
                 to: { name: "BoxStorage Order Confirmation" },
               },
               {
+                name: "MovingService Order Confirmation",
+                to: { name: "MovingService Order Confirmation" },
+              },
+              {
                 name: "SelfStorage Order Received",
                 to: { name: "SelfStorage Order Received" },
               },
               {
                 name: "BoxStorage Order Received",
                 to: { name: "BoxStorage Order Received" },
+              },
+              // MOVINGSERVICE ORDER RECEIVED
+              {
+                name: "MovingService Order Received",
+                to: { name: "MovingService Order Received" },
               },
               {
                 name: "SelfStorage Refund",
@@ -168,6 +177,10 @@ export default [
               {
                 name: "BoxStorage Refund",
                 to: { name: "BoxStorage Refund" },
+              },
+              {
+                name: "MovingService Refund",
+                to: { name: "MovingService Refund" },
               },
               {
                 name: "SelfStorage Online Register",

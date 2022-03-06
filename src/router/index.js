@@ -20,14 +20,22 @@ const SelfStorageOrderConfirmationTemplate = () =>
     import('@/admin/views/EmailTemplates/SelfStorageOrderConfirmation')
 const BoxStorageOrderConfirmationTemplate = () =>
     import('@/admin/views/EmailTemplates/BoxStorageOrderConfirmation')
+     // MOVING SERVICE ORDER CONFIRMATION
+    const MovingServiceOrderConfirmationTemplate = () =>
+    import('@/admin/views/EmailTemplates/MovingServiceOrderConfirmation')
 const SelfStorageOrderreceivedTemplate = () =>
     import('@/admin/views/EmailTemplates/SelfStorageOrderReceived')
 const BoxStorageOrderreceivedTemplate = () =>
     import('@/admin/views/EmailTemplates/BoxStorageOrderReceived')
+    // MOVING SERVICE ORDER RECEIVED
+    const MovingServiceOrderreceivedTemplate = () =>
+    import('@/admin/views/EmailTemplates/MovingServiceOrderReceived')
 const SelfStorageRefundTemplate = () =>
     import('@/admin/views/EmailTemplates/SelfStorageRefund')
 const BoxStorageRefundTemplate = () =>
-    import('@/admin/views/EmailTemplates/BoxStorageRefund')
+import('@/admin/views/EmailTemplates/SelfStorageRefund')
+const MovingServiceRefundTemplate = () =>
+    import('@/admin/views/EmailTemplates/MovingServiceRefund')
 const SelfStorageOnlineRegisterTemplate = () =>
     import('@/admin/views/EmailTemplates/SelfStorageOnlineRegister')
 const Banner = () =>
@@ -235,9 +243,26 @@ function configRoutes() {
                 },
             },
             {
+                path: '/admin/movingserviceorderconfirmation',
+                name: 'MovingService Order Confirmation',
+                component: MovingServiceOrderConfirmationTemplate,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            {
                 path: '/admin/selfstorageorderreceived',
                 name: 'SelfStorage Order Received',
                 component: SelfStorageOrderreceivedTemplate,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            // moving service order received
+            {
+                path: '/admin/movingserviceorderreceived',
+                name: 'MovingService Order Received',
+                component: MovingServiceOrderreceivedTemplate,
                 meta: {
                     requiresAuth: true
                 },
@@ -262,6 +287,15 @@ function configRoutes() {
                 path: '/admin/boxstoragerefund',
                 name: 'BoxStorage Refund',
                 component: BoxStorageRefundTemplate,
+                meta: {
+                    requiresAuth: true
+                },
+            },
+            //MOVING SERVICE REFUND
+            {
+                path: '/admin/movingservicerefund',
+                name: 'MovingService Refund',
+                component: MovingServiceRefundTemplate,
                 meta: {
                     requiresAuth: true
                 },
